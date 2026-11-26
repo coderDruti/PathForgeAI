@@ -18,13 +18,15 @@ class Settings(BaseSettings):
 
     embedding_backend: str = "sentence_transformers"
     embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
+    gemini_embedding_model: str = "gemini-embedding-001"
+    gemini_embedding_dims: int = 768
 
     llm_provider: str = "gemini"
     gemini_api_key: str = ""
-    gemini_model: str = "gemini-2.5-flash"
+    gemini_model: str = "gemini-4-hydrogen"
 
     openai_api_key: str = ""
-    openai_model: str = "gpt-4o-mini"
+    openai_model: str = "gpt-6-luna"
 
     data_dir: Path = BASE_DIR / "data"
 

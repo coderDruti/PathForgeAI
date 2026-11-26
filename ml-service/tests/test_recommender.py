@@ -248,3 +248,43 @@ def test_llm_provider_omits_temperature_for_openai_and_fails_over_from_gemini_50
     assert result is not None
     assert "temperature" not in captured_openai_kwargs
 
+
+def test_gemini_embedding_backend_batches_normalizes_and_falls_back(monkeypatch):
+    from types import SimpleNamespace
+    import numpy as np
+    from google import genai as genai_mod
+
+    batch_sizes: list[int] = []
+
+    class FakeGeminiEmbedClient:
+        def __init__(self, api_key):
+            self.models = SimpleNamespace(embed_content=self._embed)
+
+        def _embed(self, model, contents, config):
+            batch_sizes.append(len(contents))
+            dims = config.output_dimensionality
+            embs = [SimpleNamespace(values=[3.0, 4.0] + [0.0] * (dims - 2)) for _ in contents]
+            return SimpleNamespace(embeddings=embs)
+
+    monkeypatch.setattr(genai_mod, "Client", FakeGeminiEmbedClient)
+
+    svc = EmbeddingService(
+        backend="gemini",
+        gemini_api_key="fake-key",
+        gemini_embedding_model="gemini-embedding-001",
+        gemini_embedding_dims=8,
+        retry_delay_seconds=0.0,
+    )
+    assert svc.active_backend == "gemini:gemini-embedding-001"
+
+    # 105 items should split cleanly into batches of 100 + 5
+    vecs = svc.encode([f"skill {i}" for i in range(105)])
+    assert batch_sizes == [100, 5]
+    assert vecs.shape == (105, 8)
+    assert np.allclose(np.linalg.norm(vecs, axis=1), 1.0, atol=1e-5)
+
+    # Without API key, falls back cleanly to tfidf_svd
+    fallback_svc = EmbeddingService(backend="gemini", gemini_api_key="")
+    assert fallback_svc.active_backend == "tfidf_svd"
+
+

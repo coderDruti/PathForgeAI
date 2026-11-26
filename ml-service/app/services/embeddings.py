@@ -1,10 +1,14 @@
 import logging
 import math
 import re
+import time
 from collections import Counter
 import numpy as np
 
 logger = logging.getLogger(__name__)
+
+GEMINI_BATCH_SIZE = 100
+TRANSIENT_MARKERS = ("503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "high demand", "overloaded")
 
 STOP_WORDS = {
     "a", "an", "and", "are", "as", "at", "be", "by", "for", "from", "in", "into",
@@ -79,22 +83,56 @@ class PureNumpyTfidfSVD:
 class EmbeddingService:
     """
     Produces L2-normalized dense embeddings for roles, skills, and user profiles.
-    Uses local sentence-transformers (all-MiniLM-L6-v2) by default, with a
-    deterministic pure-NumPy TF-IDF + SVD fallback for air-gapped environments or fast tests.
+    Supported backends:
+    - "sentence_transformers": local all-MiniLM-L6-v2 (CPU PyTorch)
+    - "gemini": Google Gemini Embedding API (low RAM, ideal for 512 MB tiers)
+    - "tfidf_svd": deterministic pure-NumPy TF-IDF + SVD offline fallback
     """
 
     def __init__(
         self,
         backend: str = "sentence_transformers",
         model_name: str = "sentence-transformers/all-MiniLM-L6-v2",
+        gemini_api_key: str = "",
+        gemini_embedding_model: str = "gemini-embedding-001",
+        gemini_embedding_dims: int = 768,
+        retry_delay_seconds: float = 0.8,
     ):
-        self.requested_backend = backend
+        self.requested_backend = backend.lower().strip()
         self.model_name = model_name
+        self.gemini_embedding_model = gemini_embedding_model
+        self.gemini_embedding_dims = gemini_embedding_dims
+        self.retry_delay_seconds = retry_delay_seconds
+
         self.active_backend = "tfidf_svd"
         self._st_model = None
+        self._gemini_client = None
+        self._gemini_ready_dim: int | None = None
         self._svd: PureNumpyTfidfSVD | None = None
 
-        if backend == "sentence_transformers":
+        if self.requested_backend == "gemini":
+            if gemini_api_key.strip():
+                try:
+                    from google import genai
+
+                    self._gemini_client = genai.Client(api_key=gemini_api_key.strip())
+                    self.active_backend = f"gemini:{gemini_embedding_model}"
+                    logger.info(
+                        "Initialized Gemini embedding client: %s (dims=%d)",
+                        gemini_embedding_model,
+                        gemini_embedding_dims,
+                    )
+                except Exception as exc:
+                    logger.warning(
+                        "Falling back to TF-IDF+SVD embeddings because Gemini client failed to initialize: %s",
+                        exc,
+                    )
+            else:
+                logger.warning(
+                    "EMBEDDING_BACKEND=gemini requested but GEMINI_API_KEY is empty; falling back to tfidf_svd."
+                )
+
+        elif self.requested_backend == "sentence_transformers":
             try:
                 from sentence_transformers import SentenceTransformer
 
@@ -109,14 +147,70 @@ class EmbeddingService:
                 self.active_backend = "tfidf_svd"
 
     def fit_corpus(self, texts: list[str]) -> None:
-        """Fit fallback TF-IDF+SVD projector if transformer backend isn't active."""
-        if self._st_model is not None:
+        """Fit pure-NumPy TF-IDF+SVD fallback projector (fast, <20ms) so fallback is always ready."""
+        if not texts:
             return
         self._svd = PureNumpyTfidfSVD(max_features=3000, n_components=64).fit(texts)
+
+    @staticmethod
+    def _is_transient_error(exc: Exception) -> bool:
+        msg = str(exc).lower()
+        return any(m.lower() in msg for m in TRANSIENT_MARKERS)
+
+    def _encode_gemini(self, texts: list[str]) -> np.ndarray:
+        from google.genai import types
+
+        assert self._gemini_client is not None
+        chunks: list[np.ndarray] = []
+
+        for start in range(0, len(texts), GEMINI_BATCH_SIZE):
+            batch = texts[start : start + GEMINI_BATCH_SIZE]
+            resp = None
+            for attempt in range(1, 3):
+                try:
+                    resp = self._gemini_client.models.embed_content(
+                        model=self.gemini_embedding_model,
+                        contents=batch,
+                        config=types.EmbedContentConfig(
+                            output_dimensionality=self.gemini_embedding_dims
+                        ),
+                    )
+                    break
+                except Exception as exc:
+                    if attempt < 2 and self._is_transient_error(exc):
+                        time.sleep(self.retry_delay_seconds)
+                        continue
+                    raise
+
+            assert resp is not None and resp.embeddings is not None
+            arr = np.array([e.values for e in resp.embeddings], dtype=np.float32)
+            chunks.append(arr)
+
+        vecs = np.vstack(chunks) if len(chunks) > 1 else chunks[0]
+        norms = np.linalg.norm(vecs, axis=1, keepdims=True)
+        norms = np.where(norms == 0, 1.0, norms)
+        normalized = (vecs / norms).astype(np.float32)
+        self._gemini_ready_dim = normalized.shape[1]
+        return normalized
 
     def encode(self, texts: list[str]) -> np.ndarray:
         if not texts:
             return np.zeros((0, 1), dtype=np.float32)
+
+        if self._gemini_client is not None:
+            try:
+                return self._encode_gemini(texts)
+            except Exception as exc:
+                logger.warning(
+                    "Gemini embedding call failed; falling back gracefully: %s", exc
+                )
+                # If startup already indexed Gemini vectors, return neutral zero vectors
+                # of matching dimension so cosine_similarity never hits a shape mismatch.
+                if self._gemini_ready_dim is not None:
+                    return np.zeros((len(texts), self._gemini_ready_dim), dtype=np.float32)
+                # Startup failed before any Gemini vectors were indexed: permanently switch to tfidf_svd.
+                self._gemini_client = None
+                self.active_backend = "tfidf_svd"
 
         if self._st_model is not None:
             vecs = self._st_model.encode(
@@ -138,5 +232,7 @@ class EmbeddingService:
         """Assumes vec_a (d,) and matrix_b (n, d) are L2-normalized."""
         if matrix_b.shape[0] == 0:
             return np.array([], dtype=np.float32)
+        if vec_a.shape[0] != matrix_b.shape[1]:
+            return np.zeros(matrix_b.shape[0], dtype=np.float32)
         scores = np.dot(matrix_b, vec_a)
         return np.clip(scores, -1.0, 1.0)

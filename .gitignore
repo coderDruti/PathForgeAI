@@ -12,7 +12,6 @@ build/
 # Environment
 .env
 .env.local
-.env.example
 
 # Logs & OS
 *.log
