@@ -1,0 +1,789 @@
+[
+  {
+    "id": "python",
+    "name": "Python",
+    "category": "Languages",
+    "aliases": ["py", "python3", "python 3"],
+    "prerequisites": [],
+    "estimated_hours": 35,
+    "resources": [
+      {"title": "Official Python Tutorial", "url": "https://docs.python.org/3/tutorial/", "type": "docs", "free": true},
+      {"title": "Fluent Python", "url": "https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/", "type": "book", "free": false}
+    ],
+    "project_prompts": ["Build a typed CLI task runner with async I/O and pytest coverage"]
+  },
+  {
+    "id": "javascript",
+    "name": "JavaScript",
+    "category": "Languages",
+    "aliases": ["js", "es6", "ecmascript", "vanilla js"],
+    "prerequisites": [],
+    "estimated_hours": 35,
+    "resources": [
+      {"title": "MDN JavaScript Guide", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide", "type": "docs", "free": true},
+      {"title": "JavaScript.info", "url": "https://javascript.info/", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Implement an async event emitter and browser state manager from scratch"]
+  },
+  {
+    "id": "typescript",
+    "name": "TypeScript",
+    "category": "Languages",
+    "aliases": ["ts", "tsx"],
+    "prerequisites": ["javascript"],
+    "estimated_hours": 24,
+    "resources": [
+      {"title": "TypeScript Handbook", "url": "https://www.typescriptlang.org/docs/handbook/intro.html", "type": "docs", "free": true},
+      {"title": "Type Challenges", "url": "https://github.com/type-challenges/type-challenges", "type": "practice", "free": true}
+    ],
+    "project_prompts": ["Create a strictly typed REST API client SDK with generic response validators"]
+  },
+  {
+    "id": "java",
+    "name": "Java",
+    "category": "Languages",
+    "aliases": ["jdk", "jvm", "java 17", "java 21"],
+    "prerequisites": ["dsa"],
+    "estimated_hours": 40,
+    "resources": [
+      {"title": "Dev.java Learning Path", "url": "https://dev.java/learn/", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Build a multi-threaded order matching simulator using Java concurrency utilities"]
+  },
+  {
+    "id": "go",
+    "name": "Go",
+    "category": "Languages",
+    "aliases": ["golang"],
+    "prerequisites": ["dsa", "linux"],
+    "estimated_hours": 32,
+    "resources": [
+      {"title": "A Tour of Go", "url": "https://go.dev/tour/", "type": "practice", "free": true},
+      {"title": "Effective Go", "url": "https://go.dev/doc/effective_go", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Build a concurrent reverse proxy with rate limiting using goroutines and channels"]
+  },
+  {
+    "id": "cpp",
+    "name": "C++",
+    "category": "Languages",
+    "aliases": ["c++", "cpp17", "cpp20", "c/c++"],
+    "prerequisites": ["dsa"],
+    "estimated_hours": 50,
+    "resources": [
+      {"title": "LearnCpp", "url": "https://www.learncpp.com/", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Implement a custom LRU cache and arena allocator in modern C++20"]
+  },
+  {
+    "id": "rust",
+    "name": "Rust",
+    "category": "Languages",
+    "aliases": ["rustlang", "cargo"],
+    "prerequisites": ["dsa", "linux"],
+    "estimated_hours": 45,
+    "resources": [
+      {"title": "The Rust Programming Language Book", "url": "https://doc.rust-lang.org/book/", "type": "book", "free": true}
+    ],
+    "project_prompts": ["Write a fast log parser and search CLI tool with Tokio async streams"]
+  },
+  {
+    "id": "sql",
+    "name": "SQL",
+    "category": "Databases",
+    "aliases": ["structured query language", "tsql", "plsql"],
+    "prerequisites": [],
+    "estimated_hours": 24,
+    "resources": [
+      {"title": "SQLBolt Interactive Lessons", "url": "https://sqlbolt.com/", "type": "practice", "free": true},
+      {"title": "PostgreSQL Exercises", "url": "https://pgexercises.com/", "type": "practice", "free": true}
+    ],
+    "project_prompts": ["Design an analytics query suite using CTEs, window functions, and query plan tuning"]
+  },
+  {
+    "id": "git",
+    "name": "Git & Version Control",
+    "category": "CS Fundamentals",
+    "aliases": ["github", "gitlab", "version control", "git"],
+    "prerequisites": [],
+    "estimated_hours": 10,
+    "resources": [
+      {"title": "Pro Git Book", "url": "https://git-scm.com/book/en/v2", "type": "book", "free": true}
+    ],
+    "project_prompts": ["Set up trunk-based branching, PR templates, and semantic release tags on a repo"]
+  },
+  {
+    "id": "dsa",
+    "name": "Data Structures & Algorithms",
+    "category": "CS Fundamentals",
+    "aliases": ["algorithms", "data structures", "leetcode", "problem solving", "big o"],
+    "prerequisites": [],
+    "estimated_hours": 60,
+    "resources": [
+      {"title": "NeetCode Roadmap", "url": "https://neetcode.io/roadmap", "type": "practice", "free": true},
+      {"title": "CP-Algorithms", "url": "https://cp-algorithms.com/", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Implement and benchmark graph shortest-path, trie autocomplete, and heap scheduler"]
+  },
+  {
+    "id": "system_design",
+    "name": "System Design",
+    "category": "CS Fundamentals",
+    "aliases": ["distributed systems", "architecture", "scalability", "high level design", "hld"],
+    "prerequisites": ["rest_apis", "sql", "redis"],
+    "estimated_hours": 40,
+    "resources": [
+      {"title": "System Design Primer", "url": "https://github.com/donnemartin/system-design-primer", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Write an architecture RFC with load estimates, sharding strategy, and failover diagrams"]
+  },
+  {
+    "id": "linux",
+    "name": "Linux & Shell Scripting",
+    "category": "Cloud & DevOps",
+    "aliases": ["bash", "shell", "unix", "ubuntu", "cli"],
+    "prerequisites": [],
+    "estimated_hours": 20,
+    "resources": [
+      {"title": "Linux Journey", "url": "https://linuxjourney.com/", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Automate service health monitoring, log rotation, and backup alerts with Bash"]
+  },
+  {
+    "id": "networking",
+    "name": "Computer Networking",
+    "category": "CS Fundamentals",
+    "aliases": ["tcp/ip", "http", "dns", "tls", "https", "network security"],
+    "prerequisites": ["linux"],
+    "estimated_hours": 24,
+    "resources": [
+      {"title": "High Performance Browser Networking", "url": "https://hpbn.co/", "type": "book", "free": true}
+    ],
+    "project_prompts": ["Trace DNS, TLS handshakes, and HTTP/2 multiplexing with Wireshark and curl"]
+  },
+  {
+    "id": "html_css",
+    "name": "HTML & CSS",
+    "category": "Frontend",
+    "aliases": ["html", "css", "html5", "css3", "flexbox", "css grid", "responsive design"],
+    "prerequisites": [],
+    "estimated_hours": 20,
+    "resources": [
+      {"title": "web.dev Learn CSS", "url": "https://web.dev/learn/css", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Build a responsive accessible design system with CSS custom properties"]
+  },
+  {
+    "id": "tailwind",
+    "name": "Tailwind CSS",
+    "category": "Frontend",
+    "aliases": ["tailwindcss", "tailwind"],
+    "prerequisites": ["html_css"],
+    "estimated_hours": 12,
+    "resources": [
+      {"title": "Tailwind CSS Documentation", "url": "https://tailwindcss.com/docs", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Create a dark/light responsive dashboard component library with Tailwind"]
+  },
+  {
+    "id": "react",
+    "name": "React",
+    "category": "Frontend",
+    "aliases": ["reactjs", "react.js", "react hooks", "jsx"],
+    "prerequisites": ["javascript", "html_css"],
+    "estimated_hours": 36,
+    "resources": [
+      {"title": "React Official Docs", "url": "https://react.dev/learn", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Build an interactive data visualization workspace with optimistic UI updates"]
+  },
+  {
+    "id": "nextjs",
+    "name": "Next.js",
+    "category": "Frontend",
+    "aliases": ["next.js", "nextjs app router", "ssr", "react server components"],
+    "prerequisites": ["react", "typescript"],
+    "estimated_hours": 28,
+    "resources": [
+      {"title": "Next.js Learn Course", "url": "https://nextjs.org/learn", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Build an SSR SEO-optimized SaaS storefront with streaming Suspense boundaries"]
+  },
+  {
+    "id": "state_management",
+    "name": "Frontend State Management",
+    "category": "Frontend",
+    "aliases": ["redux", "redux toolkit", "zustand", "react query", "tanstack query"],
+    "prerequisites": ["react"],
+    "estimated_hours": 18,
+    "resources": [
+      {"title": "TanStack Query Docs", "url": "https://tanstack.com/query/latest", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Implement cached server-state synchronization with optimistic mutations and undo"]
+  },
+  {
+    "id": "web_performance",
+    "name": "Web Performance & Accessibility",
+    "category": "Frontend",
+    "aliases": ["a11y", "wcag", "core web vitals", "lighthouse", "accessibility"],
+    "prerequisites": ["react", "html_css"],
+    "estimated_hours": 18,
+    "resources": [
+      {"title": "web.dev Performance & A11y", "url": "https://web.dev/learn/accessibility", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Audit a React SPA to achieve 95+ Lighthouse performance and full keyboard navigation"]
+  },
+  {
+    "id": "react_native",
+    "name": "React Native",
+    "category": "Mobile",
+    "aliases": ["expo", "rn", "cross platform mobile"],
+    "prerequisites": ["react", "typescript"],
+    "estimated_hours": 35,
+    "resources": [
+      {"title": "React Native Docs", "url": "https://reactnative.dev/docs/getting-started", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Build an offline-first habit tracker app with push notifications and Expo Router"]
+  },
+  {
+    "id": "flutter",
+    "name": "Flutter & Dart",
+    "category": "Mobile",
+    "aliases": ["flutter", "dart"],
+    "prerequisites": ["dsa"],
+    "estimated_hours": 40,
+    "resources": [
+      {"title": "Flutter Official Codelabs", "url": "https://docs.flutter.dev/codelabs", "type": "practice", "free": true}
+    ],
+    "project_prompts": ["Ship a cross-platform expense tracker with animated charts and local persistence"]
+  },
+  {
+    "id": "swift_ios",
+    "name": "Swift & iOS Development",
+    "category": "Mobile",
+    "aliases": ["swift", "swiftui", "ios", "uikit", "xcode"],
+    "prerequisites": ["dsa"],
+    "estimated_hours": 45,
+    "resources": [
+      {"title": "Apple SwiftUI Tutorials", "url": "https://developer.apple.com/tutorials/swiftui", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Build a SwiftUI travel itinerary app with CoreData sync and widgets"]
+  },
+  {
+    "id": "kotlin_android",
+    "name": "Kotlin & Android Development",
+    "category": "Mobile",
+    "aliases": ["kotlin", "android", "jetpack compose"],
+    "prerequisites": ["dsa"],
+    "estimated_hours": 45,
+    "resources": [
+      {"title": "Android Basics with Compose", "url": "https://developer.android.com/courses/android-basics-compose/course", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Build a Jetpack Compose podcast player with Room DB and WorkManager"]
+  },
+  {
+    "id": "nodejs",
+    "name": "Node.js",
+    "category": "Backend",
+    "aliases": ["node", "node.js"],
+    "prerequisites": ["javascript"],
+    "estimated_hours": 28,
+    "resources": [
+      {"title": "Node.js Official Learn", "url": "https://nodejs.org/en/learn", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Create a streaming file processor and job queue worker in Node.js"]
+  },
+  {
+    "id": "express",
+    "name": "Express.js",
+    "category": "Backend",
+    "aliases": ["express", "expressjs", "express.js", "nestjs"],
+    "prerequisites": ["nodejs", "rest_apis"],
+    "estimated_hours": 20,
+    "resources": [
+      {"title": "Express.js Guide", "url": "https://expressjs.com/en/guide/routing.html", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Build a modular Express API gateway with JWT auth, Zod validation, and rate limiting"]
+  },
+  {
+    "id": "fastapi",
+    "name": "FastAPI",
+    "category": "Backend",
+    "aliases": ["fast api", "pydantic", "uvicorn", "flask", "django"],
+    "prerequisites": ["python", "rest_apis"],
+    "estimated_hours": 22,
+    "resources": [
+      {"title": "FastAPI Official Tutorial", "url": "https://fastapi.tiangolo.com/tutorial/", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Build an async ML inference API with Pydantic v2 validation and OpenAPI docs"]
+  },
+  {
+    "id": "spring_boot",
+    "name": "Spring Boot",
+    "category": "Backend",
+    "aliases": ["spring", "springboot", "spring framework"],
+    "prerequisites": ["java", "rest_apis", "sql"],
+    "estimated_hours": 36,
+    "resources": [
+      {"title": "Spring Boot Guides", "url": "https://spring.io/guides", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Build a transactional payment microservice with Spring Security and JPA"]
+  },
+  {
+    "id": "rest_apis",
+    "name": "REST API Design & Auth",
+    "category": "Backend",
+    "aliases": ["rest", "restful", "api design", "openapi", "swagger", "jwt", "oauth", "oauth2"],
+    "prerequisites": [],
+    "estimated_hours": 18,
+    "resources": [
+      {"title": "REST API Tutorial", "url": "https://restfulapi.net/", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Design a versioned OpenAPI spec with RBAC, pagination, and idempotency keys"]
+  },
+  {
+    "id": "graphql",
+    "name": "GraphQL",
+    "category": "Backend",
+    "aliases": ["apollo", "gql", "hasura"],
+    "prerequisites": ["rest_apis"],
+    "estimated_hours": 20,
+    "resources": [
+      {"title": "GraphQL Official Learn", "url": "https://graphql.org/learn/", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Build a federated GraphQL API with DataLoader batching to solve N+1 queries"]
+  },
+  {
+    "id": "microservices",
+    "name": "Microservices & Messaging",
+    "category": "Backend",
+    "aliases": ["kafka", "rabbitmq", "grpc", "event driven", "message queues", "celery"],
+    "prerequisites": ["rest_apis", "docker"],
+    "estimated_hours": 32,
+    "resources": [
+      {"title": "Microservices.io Patterns", "url": "https://microservices.io/patterns/index.html", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Connect two services via async events with retries, DLQ, and correlation IDs"]
+  },
+  {
+    "id": "testing_qa",
+    "name": "Automated Testing & QA",
+    "category": "Backend",
+    "aliases": ["jest", "vitest", "pytest", "playwright", "cypress", "selenium", "unit testing", "tdd", "qa"],
+    "prerequisites": ["git"],
+    "estimated_hours": 22,
+    "resources": [
+      {"title": "Pytest & Playwright Guides", "url": "https://playwright.dev/docs/intro", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Build a CI test pyramid with unit, API integration, and Playwright E2E suites"]
+  },
+  {
+    "id": "postgresql",
+    "name": "PostgreSQL",
+    "category": "Databases",
+    "aliases": ["postgres", "psql", "pgvector", "rdbms", "mysql"],
+    "prerequisites": ["sql"],
+    "estimated_hours": 24,
+    "resources": [
+      {"title": "PostgreSQL Official Docs", "url": "https://www.postgresql.org/docs/", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Model a normalized SaaS schema with indexing, migrations, and pgvector search"]
+  },
+  {
+    "id": "mongodb",
+    "name": "MongoDB",
+    "category": "Databases",
+    "aliases": ["mongo", "mongoose", "nosql", "atlas"],
+    "prerequisites": [],
+    "estimated_hours": 20,
+    "resources": [
+      {"title": "MongoDB University", "url": "https://learn.mongodb.com/", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Build aggregation pipelines and compound indexes for user activity analytics"]
+  },
+  {
+    "id": "redis",
+    "name": "Redis & Caching",
+    "category": "Databases",
+    "aliases": ["redis", "caching", "memcached", "in-memory cache"],
+    "prerequisites": ["rest_apis"],
+    "estimated_hours": 16,
+    "resources": [
+      {"title": "Redis University", "url": "https://redis.io/learn/", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Implement sliding-window rate limiting and cache-aside invalidation with Redis"]
+  },
+  {
+    "id": "vector_databases",
+    "name": "Vector Databases & Search",
+    "category": "ML & Gen AI",
+    "aliases": ["pinecone", "qdrant", "weaviate", "chromadb", "chroma", "faiss", "milvus", "elasticsearch"],
+    "prerequisites": ["python", "embeddings_nlp"],
+    "estimated_hours": 20,
+    "resources": [
+      {"title": "FAISS & HNSW Guide", "url": "https://www.pinecone.io/learn/series/faiss/", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Benchmark HNSW vs IVF-Flat hybrid dense+BM25 retrieval over 50k documents"]
+  },
+  {
+    "id": "statistics_math",
+    "name": "Statistics, Probability & Linear Algebra",
+    "category": "ML & Gen AI",
+    "aliases": ["statistics", "probability", "linear algebra", "calculus", "hypothesis testing", "ab testing", "a/b testing"],
+    "prerequisites": [],
+    "estimated_hours": 40,
+    "resources": [
+      {"title": "StatQuest YouTube & Guides", "url": "https://statquest.org/", "type": "video", "free": true}
+    ],
+    "project_prompts": ["Run a Bayesian and frequentist A/B test power analysis notebook on funnel data"]
+  },
+  {
+    "id": "pandas_numpy",
+    "name": "NumPy, Pandas & EDA",
+    "category": "Data Engineering",
+    "aliases": ["pandas", "numpy", "eda", "data cleaning", "polars", "jupyter"],
+    "prerequisites": ["python"],
+    "estimated_hours": 24,
+    "resources": [
+      {"title": "Pandas Getting Started", "url": "https://pandas.pydata.org/docs/getting_started/index.html", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Clean and analyze a messy 2M-row dataset with vectorized feature engineering"]
+  },
+  {
+    "id": "data_visualization",
+    "name": "Data Visualization & BI",
+    "category": "Data Engineering",
+    "aliases": ["tableau", "power bi", "powerbi", "looker", "matplotlib", "seaborn", "plotly", "bi"],
+    "prerequisites": ["sql", "pandas_numpy"],
+    "estimated_hours": 22,
+    "resources": [
+      {"title": "Storytelling with Data Resources", "url": "https://www.storytellingwithdata.com/", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Build an executive retention cohort and revenue funnel dashboard with drill-downs"]
+  },
+  {
+    "id": "scikit_learn",
+    "name": "Classical Machine Learning (Scikit-Learn)",
+    "category": "ML & Gen AI",
+    "aliases": ["machine learning", "ml", "sklearn", "scikit-learn", "xgboost", "lightgbm", "regression", "classification"],
+    "prerequisites": ["python", "pandas_numpy", "statistics_math"],
+    "estimated_hours": 40,
+    "resources": [
+      {"title": "Scikit-Learn User Guide", "url": "https://scikit-learn.org/stable/user_guide.html", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Train and calibrate a churn prediction pipeline with cross-validation and SHAP explanations"]
+  },
+  {
+    "id": "pytorch_dl",
+    "name": "Deep Learning (PyTorch)",
+    "category": "ML & Gen AI",
+    "aliases": ["pytorch", "deep learning", "neural networks", "tensorflow", "keras", "cnn", "transformers"],
+    "prerequisites": ["scikit_learn"],
+    "estimated_hours": 50,
+    "resources": [
+      {"title": "PyTorch Official Tutorials", "url": "https://pytorch.org/tutorials/", "type": "course", "free": true},
+      {"title": "Fast.ai Practical Deep Learning", "url": "https://course.fast.ai/", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Fine-tune a pretrained transformer with mixed precision and track loss curves"]
+  },
+  {
+    "id": "embeddings_nlp",
+    "name": "NLP & Semantic Embeddings",
+    "category": "ML & Gen AI",
+    "aliases": ["nlp", "natural language processing", "spacy", "huggingface", "hugging face", "sentence-transformers", "bert", "embeddings"],
+    "prerequisites": ["python", "scikit_learn"],
+    "estimated_hours": 32,
+    "resources": [
+      {"title": "Hugging Face NLP Course", "url": "https://huggingface.co/learn/nlp-course", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Build a domain NER extractor and semantic search ranker evaluated with NDCG@10"]
+  },
+  {
+    "id": "computer_vision",
+    "name": "Computer Vision",
+    "category": "ML & Gen AI",
+    "aliases": ["cv", "opencv", "yolo", "object detection", "image segmentation", "vlm"],
+    "prerequisites": ["pytorch_dl"],
+    "estimated_hours": 40,
+    "resources": [
+      {"title": "Stanford CS231n Notes", "url": "https://cs231n.github.io/", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Build a real-time defect detection pipeline with ONNX export and latency benchmarks"]
+  },
+  {
+    "id": "recsys",
+    "name": "Recommendation Systems",
+    "category": "ML & Gen AI",
+    "aliases": ["recommender systems", "collaborative filtering", "ranking", "matrix factorization", "two-tower"],
+    "prerequisites": ["scikit_learn", "embeddings_nlp"],
+    "estimated_hours": 32,
+    "resources": [
+      {"title": "Google Machine Learning RecSys Course", "url": "https://developers.google.com/machine-learning/recommendation", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Build a two-stage retrieval + reranking recommender evaluated with Recall@K and NDCG"]
+  },
+  {
+    "id": "llm_rag",
+    "name": "LLM Engineering & RAG",
+    "category": "ML & Gen AI",
+    "aliases": ["llm", "llms", "rag", "retrieval augmented generation", "gen ai", "genai", "generative ai", "prompt engineering", "openai", "gemini", "langchain", "llamaindex"],
+    "prerequisites": ["python", "embeddings_nlp", "vector_databases"],
+    "estimated_hours": 36,
+    "resources": [
+      {"title": "DeepLearning.AI Generative AI Courses", "url": "https://www.deeplearning.ai/short-courses/", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Build a hybrid BM25+vector RAG assistant with citations, reranking, and structured JSON output"]
+  },
+  {
+    "id": "ai_agents",
+    "name": "AI Agents & Tool Orchestration",
+    "category": "ML & Gen AI",
+    "aliases": ["langgraph", "agents", "agentic ai", "function calling", "tool use", "mcp", "crewai", "autogen"],
+    "prerequisites": ["llm_rag", "fastapi"],
+    "estimated_hours": 30,
+    "resources": [
+      {"title": "Anthropic Building Effective Agents", "url": "https://www.anthropic.com/research/building-effective-agents", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Build a stateful multi-step research agent with guardrails, retries, and tool trace logs"]
+  },
+  {
+    "id": "llm_evals",
+    "name": "LLM Evaluation & Guardrails",
+    "category": "ML & Gen AI",
+    "aliases": ["evals", "ragas", "deepeval", "langsmith", "arize", "prompt injection", "guardrails"],
+    "prerequisites": ["llm_rag"],
+    "estimated_hours": 24,
+    "resources": [
+      {"title": "Hamel Husain LLM Evals Guide", "url": "https://hamel.dev/blog/posts/evals/", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Create an automated golden-dataset eval harness measuring faithfulness, latency, and cost"]
+  },
+  {
+    "id": "fine_tuning",
+    "name": "LLM Fine-Tuning (LoRA / PEFT)",
+    "category": "ML & Gen AI",
+    "aliases": ["lora", "qlora", "peft", "rlhf", "dpo", "vllm", "model quantization"],
+    "prerequisites": ["pytorch_dl", "llm_rag"],
+    "estimated_hours": 36,
+    "resources": [
+      {"title": "Hugging Face PEFT Documentation", "url": "https://huggingface.co/docs/peft/index", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Fine-tune an open-weights 7B model with QLoRA on domain JSON extraction and serve via vLLM"]
+  },
+  {
+    "id": "mlops",
+    "name": "MLOps & Model Serving",
+    "category": "ML & Gen AI",
+    "aliases": ["mlflow", "kubeflow", "sagemaker", "model deployment", "feature store", "feast", "weights and biases", "wandb", "triton"],
+    "prerequisites": ["scikit_learn", "docker", "ci_cd"],
+    "estimated_hours": 36,
+    "resources": [
+      {"title": "Made With ML MLOps Course", "url": "https://madewithml.com/", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Automate training, MLflow model registry, drift monitoring, and canary FastAPI serving"]
+  },
+  {
+    "id": "data_warehousing",
+    "name": "Data Warehousing & Modeling",
+    "category": "Data Engineering",
+    "aliases": ["snowflake", "bigquery", "redshift", "star schema", "dimensional modeling", "etl", "elt"],
+    "prerequisites": ["sql"],
+    "estimated_hours": 28,
+    "resources": [
+      {"title": "Data Engineering Zoomcamp", "url": "https://github.com/DataTalksClub/data-engineering-zoomcamp", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Design a star-schema warehouse with partitioned fact tables and incremental loads"]
+  },
+  {
+    "id": "dbt",
+    "name": "dbt (Data Build Tool)",
+    "category": "Data Engineering",
+    "aliases": ["dbt core", "dbt cloud", "analytics engineering"],
+    "prerequisites": ["sql", "data_warehousing", "git"],
+    "estimated_hours": 20,
+    "resources": [
+      {"title": "dbt Learn Fundamentals", "url": "https://learn.getdbt.com/", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Build staging-to-mart dbt models with schema tests, lineage docs, and CI checks"]
+  },
+  {
+    "id": "airflow",
+    "name": "Workflow Orchestration (Airflow)",
+    "category": "Data Engineering",
+    "aliases": ["apache airflow", "dagster", "prefect", "orchestration"],
+    "prerequisites": ["python", "docker", "sql"],
+    "estimated_hours": 26,
+    "resources": [
+      {"title": "Apache Airflow Documentation", "url": "https://airflow.apache.org/docs/", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Orchestrate a daily backfillable ingestion + data quality + warehouse refresh DAG"]
+  },
+  {
+    "id": "spark",
+    "name": "Apache Spark & Distributed Data",
+    "category": "Data Engineering",
+    "aliases": ["pyspark", "spark", "databricks", "hadoop", "big data", "delta lake"],
+    "prerequisites": ["python", "sql", "data_warehousing"],
+    "estimated_hours": 36,
+    "resources": [
+      {"title": "Spark Official Programming Guide", "url": "https://spark.apache.org/docs/latest/sql-programming-guide.html", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Process 50GB Parquet logs in PySpark optimizing shuffle partitions and broadcast joins"]
+  },
+  {
+    "id": "streaming_kafka",
+    "name": "Stream Processing (Kafka / Flink)",
+    "category": "Data Engineering",
+    "aliases": ["apache kafka", "flink", "kinesis", "cdc", "debezium", "real-time streaming"],
+    "prerequisites": ["docker", "data_warehousing"],
+    "estimated_hours": 32,
+    "resources": [
+      {"title": "Confluent Developer Kafka Courses", "url": "https://developer.confluent.io/courses/", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Build a real-time clickstream anomaly detector using Kafka topics and windowed aggregations"]
+  },
+  {
+    "id": "docker",
+    "name": "Docker & Containers",
+    "category": "Cloud & DevOps",
+    "aliases": ["docker", "dockerfile", "docker compose", "containers"],
+    "prerequisites": ["linux"],
+    "estimated_hours": 18,
+    "resources": [
+      {"title": "Docker Official Getting Started", "url": "https://docs.docker.com/get-started/", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Containerize a multi-tier web + ML stack with multi-stage builds and healthchecks"]
+  },
+  {
+    "id": "kubernetes",
+    "name": "Kubernetes",
+    "category": "Cloud & DevOps",
+    "aliases": ["k8s", "helm", "eks", "gke", "aks", "container orchestration"],
+    "prerequisites": ["docker", "networking"],
+    "estimated_hours": 38,
+    "resources": [
+      {"title": "Kubernetes Official Tutorials", "url": "https://kubernetes.io/docs/tutorials/", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Deploy a microservice cluster with Helm charts, HPA autoscaling, and ingress TLS"]
+  },
+  {
+    "id": "cloud_aws",
+    "name": "Cloud Platforms (AWS / GCP / Azure)",
+    "category": "Cloud & DevOps",
+    "aliases": ["aws", "gcp", "azure", "ec2", "s3", "lambda", "iam", "cloud"],
+    "prerequisites": ["linux", "networking"],
+    "estimated_hours": 36,
+    "resources": [
+      {"title": "AWS Skill Builder Free Tier", "url": "https://skillbuilder.aws/", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Deploy a serverless API + object storage pipeline with least-privilege IAM roles"]
+  },
+  {
+    "id": "terraform",
+    "name": "Infrastructure as Code (Terraform)",
+    "category": "Cloud & DevOps",
+    "aliases": ["iac", "terraform", "pulumi", "cloudformation", "ansible"],
+    "prerequisites": ["cloud_aws", "git"],
+    "estimated_hours": 24,
+    "resources": [
+      {"title": "HashiCorp Terraform Tutorials", "url": "https://developer.hashicorp.com/terraform/tutorials", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Provision reproducible VPC, managed DB, and container runtime modules with remote state"]
+  },
+  {
+    "id": "ci_cd",
+    "name": "CI/CD Pipelines",
+    "category": "Cloud & DevOps",
+    "aliases": ["github actions", "jenkins", "gitlab ci", "argocd", "devops", "cicd"],
+    "prerequisites": ["git", "docker"],
+    "estimated_hours": 16,
+    "resources": [
+      {"title": "GitHub Actions Documentation", "url": "https://docs.github.com/en/actions", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Configure lint, test, container vulnerability scan, and blue-green deploy workflows"]
+  },
+  {
+    "id": "observability",
+    "name": "Observability (Prometheus / OpenTelemetry)",
+    "category": "Cloud & DevOps",
+    "aliases": ["prometheus", "grafana", "datadog", "opentelemetry", "elk", "logging", "monitoring", "sre"],
+    "prerequisites": ["docker", "linux"],
+    "estimated_hours": 22,
+    "resources": [
+      {"title": "OpenTelemetry Docs", "url": "https://opentelemetry.io/docs/", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Instrument distributed tracing, RED metrics, and SLO burn-rate alerts across services"]
+  },
+  {
+    "id": "appsec_owasp",
+    "name": "Application Security & OWASP",
+    "category": "Security",
+    "aliases": ["owasp", "appsec", "xss", "sqli", "csrf", "web security", "secure coding"],
+    "prerequisites": ["rest_apis", "networking"],
+    "estimated_hours": 28,
+    "resources": [
+      {"title": "PortSwigger Web Security Academy", "url": "https://portswigger.net/web-security", "type": "practice", "free": true}
+    ],
+    "project_prompts": ["Perform a security audit and remediate OWASP Top 10 flaws in a vulnerable web app"]
+  },
+  {
+    "id": "cloud_security",
+    "name": "Cloud & Infrastructure Security",
+    "category": "Security",
+    "aliases": ["devsecops", "iam security", "zero trust", "siem", "soc", "vulnerability management"],
+    "prerequisites": ["cloud_aws", "networking", "appsec_owasp"],
+    "estimated_hours": 32,
+    "resources": [
+      {"title": "AWS Security Best Practices", "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Build automated CIS benchmark checks, secret scanning, and SIEM alert playbooks"]
+  },
+  {
+    "id": "pentesting",
+    "name": "Penetration Testing & Threat Modeling",
+    "category": "Security",
+    "aliases": ["pentest", "ethical hacking", "burp suite", "metasploit", "red team", "threat modeling", "cybersecurity"],
+    "prerequisites": ["linux", "networking", "appsec_owasp"],
+    "estimated_hours": 40,
+    "resources": [
+      {"title": "OWASP Threat Modeling Guide", "url": "https://owasp.org/www-community/Threat_Modeling", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Produce a STRIDE threat model and remediation report for a multi-tenant API"]
+  },
+  {
+    "id": "product_strategy",
+    "name": "Product Strategy & Discovery",
+    "category": "Product & Design",
+    "aliases": ["product management", "prd", "roadmapping", "user research", "agile", "scrum", "stakeholder management"],
+    "prerequisites": [],
+    "estimated_hours": 28,
+    "resources": [
+      {"title": "SVPG Product Management Articles", "url": "https://www.svpg.com/articles/", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Write a full PRD with North Star metrics, user personas, and RICE prioritization"]
+  },
+  {
+    "id": "product_analytics",
+    "name": "Product Analytics & Experimentation",
+    "category": "Product & Design",
+    "aliases": ["mixpanel", "amplitude", "ga4", "funnel analysis", "retention metrics", "kpi"],
+    "prerequisites": ["sql", "statistics_math"],
+    "estimated_hours": 22,
+    "resources": [
+      {"title": "Amplitude Product Analytics Playbook", "url": "https://amplitude.com/blog", "type": "docs", "free": true}
+    ],
+    "project_prompts": ["Define an event taxonomy and analyze activation-to-retention drop-off drivers"]
+  },
+  {
+    "id": "ui_ux_design",
+    "name": "UI/UX Design & Prototyping",
+    "category": "Product & Design",
+    "aliases": ["figma", "ux", "ui design", "wireframing", "design systems", "usability testing"],
+    "prerequisites": [],
+    "estimated_hours": 32,
+    "resources": [
+      {"title": "Figma Learn Design", "url": "https://help.figma.com/hc/en-us/categories/360002051613", "type": "course", "free": true}
+    ],
+    "project_prompts": ["Design an interactive Figma prototype and run 5 moderated usability tests"]
+  }
+]

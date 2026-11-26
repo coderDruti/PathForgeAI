@@ -1,0 +1,554 @@
+[
+  {
+    "id": "p01_mern_genai",
+    "label": "MERN Full-Stack Dev transitioning into Gen AI",
+    "profile": {
+      "summary": "Built production React TypeScript dashboards and Node.js Express MongoDB APIs. Recently built RAG chatbots with Python FastAPI and vector search.",
+      "skills": [
+        {"name": "React", "proficiency": "advanced"},
+        {"name": "TypeScript", "proficiency": "advanced"},
+        {"name": "Node.js", "proficiency": "advanced"},
+        {"name": "MongoDB", "proficiency": "intermediate"},
+        {"name": "Python", "proficiency": "intermediate"},
+        {"name": "FastAPI", "proficiency": "intermediate"},
+        {"name": "RAG", "proficiency": "intermediate"},
+        {"name": "REST", "proficiency": "advanced"}
+      ],
+      "interests": ["Generative AI", "Full-Stack AI Products", "LLM Engineering"],
+      "experience_years": 2.0,
+      "weekly_hours": 12,
+      "target_timeline_weeks": 16,
+      "work_style": "product"
+    },
+    "relevant_roles": ["ai_application_engineer", "fullstack_engineer", "genai_engineer"]
+  },
+  {
+    "id": "p02_llm_specialist",
+    "label": "Python Engineer focused on LLMs, Agents & Evals",
+    "profile": {
+      "summary": "Building multi-step LLM agents, hybrid vector retrieval pipelines, prompt evaluation harnesses, and FastAPI inference services.",
+      "skills": [
+        {"name": "Python", "proficiency": "advanced"},
+        {"name": "LangChain", "proficiency": "advanced"},
+        {"name": "LangGraph", "proficiency": "intermediate"},
+        {"name": "Qdrant", "proficiency": "intermediate"},
+        {"name": "Sentence-Transformers", "proficiency": "advanced"},
+        {"name": "RAGAS", "proficiency": "intermediate"},
+        {"name": "FastAPI", "proficiency": "advanced"},
+        {"name": "Docker", "proficiency": "intermediate"}
+      ],
+      "interests": ["LLMs", "AI Agents", "RAG Evaluation"],
+      "experience_years": 3.0,
+      "weekly_hours": 10,
+      "target_timeline_weeks": 12,
+      "work_style": "product"
+    },
+    "relevant_roles": ["genai_engineer", "ai_application_engineer", "nlp_engineer"]
+  },
+  {
+    "id": "p03_frontend_junior",
+    "label": "Junior Frontend Developer",
+    "profile": {
+      "summary": "Passionate about interactive accessible web apps, React components, Tailwind CSS, and browser performance.",
+      "skills": [
+        {"name": "JavaScript", "proficiency": "advanced"},
+        {"name": "TypeScript", "proficiency": "intermediate"},
+        {"name": "ReactJS", "proficiency": "advanced"},
+        {"name": "HTML5", "proficiency": "advanced"},
+        {"name": "TailwindCSS", "proficiency": "advanced"},
+        {"name": "Redux Toolkit", "proficiency": "intermediate"},
+        {"name": "Git", "proficiency": "intermediate"}
+      ],
+      "interests": ["Frontend Engineering", "Web Performance", "Design Systems"],
+      "experience_years": 1.0,
+      "weekly_hours": 10,
+      "target_timeline_weeks": 12,
+      "work_style": "product"
+    },
+    "relevant_roles": ["frontend_engineer", "design_engineer", "fullstack_engineer"]
+  },
+  {
+    "id": "p04_design_engineer",
+    "label": "Figma Designer who codes in React & Tailwind",
+    "profile": {
+      "summary": "Product designer building interactive Figma prototypes and shipping accessible React + Tailwind design system primitives.",
+      "skills": [
+        {"name": "Figma", "proficiency": "advanced"},
+        {"name": "CSS3", "proficiency": "advanced"},
+        {"name": "Tailwind", "proficiency": "advanced"},
+        {"name": "React", "proficiency": "intermediate"},
+        {"name": "TypeScript", "proficiency": "intermediate"},
+        {"name": "WCAG", "proficiency": "intermediate"}
+      ],
+      "interests": ["Design Systems", "UI Engineering", "Interaction Design"],
+      "experience_years": 3.0,
+      "weekly_hours": 8,
+      "target_timeline_weeks": 14,
+      "work_style": "product"
+    },
+    "relevant_roles": ["design_engineer", "frontend_engineer"]
+  },
+  {
+    "id": "p05_backend_api",
+    "label": "Backend API & Databases Engineer",
+    "profile": {
+      "summary": "Backend engineer designing high-throughput REST APIs, PostgreSQL schemas, Redis caching layers, and containerized services.",
+      "skills": [
+        {"name": "Python", "proficiency": "advanced"},
+        {"name": "Node.js", "proficiency": "intermediate"},
+        {"name": "PostgreSQL", "proficiency": "advanced"},
+        {"name": "Redis", "proficiency": "advanced"},
+        {"name": "REST API", "proficiency": "advanced"},
+        {"name": "Docker", "proficiency": "intermediate"},
+        {"name": "Algorithms", "proficiency": "intermediate"},
+        {"name": "System Design", "proficiency": "intermediate"}
+      ],
+      "interests": ["Backend Architecture", "Scalable APIs", "Databases"],
+      "experience_years": 3.5,
+      "weekly_hours": 10,
+      "target_timeline_weeks": 16,
+      "work_style": "infrastructure"
+    },
+    "relevant_roles": ["backend_engineer", "fullstack_engineer", "distributed_systems_engineer"]
+  },
+  {
+    "id": "p06_ml_research_engineer",
+    "label": "ML Engineer with PyTorch & Scikit-Learn",
+    "profile": {
+      "summary": "Trained deep learning models in PyTorch and classical tabular models with scikit-learn, evaluating experiments with statistical rigor.",
+      "skills": [
+        {"name": "Python", "proficiency": "advanced"},
+        {"name": "PyTorch", "proficiency": "advanced"},
+        {"name": "Scikit-Learn", "proficiency": "advanced"},
+        {"name": "Pandas", "proficiency": "advanced"},
+        {"name": "Statistics", "proficiency": "advanced"},
+        {"name": "SQL", "proficiency": "intermediate"},
+        {"name": "Docker", "proficiency": "intermediate"},
+        {"name": "MLflow", "proficiency": "intermediate"}
+      ],
+      "interests": ["Machine Learning", "Deep Learning", "Model Training"],
+      "experience_years": 3.0,
+      "weekly_hours": 12,
+      "target_timeline_weeks": 16,
+      "work_style": "research"
+    },
+    "relevant_roles": ["ml_engineer", "nlp_engineer", "data_scientist"]
+  },
+  {
+    "id": "p07_recsys_search",
+    "label": "Search & Ranking Engineer",
+    "profile": {
+      "summary": "Specialized in two-tower retrieval, collaborative filtering, semantic embeddings, FAISS indexing, and offline NDCG ranking evaluation.",
+      "skills": [
+        {"name": "Python", "proficiency": "advanced"},
+        {"name": "Recommendation Systems", "proficiency": "advanced"},
+        {"name": "Embeddings", "proficiency": "advanced"},
+        {"name": "FAISS", "proficiency": "advanced"},
+        {"name": "PyTorch", "proficiency": "intermediate"},
+        {"name": "Scikit-Learn", "proficiency": "advanced"},
+        {"name": "SQL", "proficiency": "intermediate"},
+        {"name": "Statistics", "proficiency": "advanced"}
+      ],
+      "interests": ["Search & Ranking", "Personalization", "Recommender Systems"],
+      "experience_years": 5.0,
+      "weekly_hours": 8,
+      "target_timeline_weeks": 12,
+      "work_style": "research"
+    },
+    "relevant_roles": ["recsys_engineer", "ml_engineer", "nlp_engineer"]
+  },
+  {
+    "id": "p08_nlp_finetuning",
+    "label": "NLP & Transformer Fine-Tuning Specialist",
+    "profile": {
+      "summary": "Experience fine-tuning transformers with LoRA/PEFT, Hugging Face NLP pipelines, document extraction, and semantic retrieval.",
+      "skills": [
+        {"name": "Python", "proficiency": "advanced"},
+        {"name": "Hugging Face", "proficiency": "advanced"},
+        {"name": "PyTorch", "proficiency": "advanced"},
+        {"name": "LoRA", "proficiency": "advanced"},
+        {"name": "RAG", "proficiency": "intermediate"},
+        {"name": "Scikit-Learn", "proficiency": "intermediate"},
+        {"name": "ChromaDB", "proficiency": "intermediate"}
+      ],
+      "interests": ["NLP", "LLM Fine-Tuning", "Applied AI"],
+      "experience_years": 3.0,
+      "weekly_hours": 10,
+      "target_timeline_weeks": 14,
+      "work_style": "research"
+    },
+    "relevant_roles": ["nlp_engineer", "genai_engineer", "ml_engineer"]
+  },
+  {
+    "id": "p09_cv_specialist",
+    "label": "Computer Vision & Edge AI Developer",
+    "profile": {
+      "summary": "Built real-time YOLO object detection, image segmentation models in PyTorch and OpenCV, optimized with C++ and ONNX.",
+      "skills": [
+        {"name": "Python", "proficiency": "advanced"},
+        {"name": "OpenCV", "proficiency": "advanced"},
+        {"name": "PyTorch", "proficiency": "advanced"},
+        {"name": "C++", "proficiency": "intermediate"},
+        {"name": "NumPy", "proficiency": "advanced"},
+        {"name": "Statistics", "proficiency": "intermediate"},
+        {"name": "Docker", "proficiency": "intermediate"}
+      ],
+      "interests": ["Computer Vision", "Object Detection", "Robotics Perception"],
+      "experience_years": 2.5,
+      "weekly_hours": 10,
+      "target_timeline_weeks": 16,
+      "work_style": "research"
+    },
+    "relevant_roles": ["cv_engineer", "ml_engineer"]
+  },
+  {
+    "id": "p10_mlops_infra",
+    "label": "MLOps & Model Serving Engineer",
+    "profile": {
+      "summary": "Deploying ML models on Kubernetes with MLflow model registries, FastAPI inference, AWS cloud infra, CI/CD, and Prometheus monitoring.",
+      "skills": [
+        {"name": "Python", "proficiency": "advanced"},
+        {"name": "MLflow", "proficiency": "advanced"},
+        {"name": "Docker", "proficiency": "advanced"},
+        {"name": "Kubernetes", "proficiency": "advanced"},
+        {"name": "AWS", "proficiency": "advanced"},
+        {"name": "GitHub Actions", "proficiency": "advanced"},
+        {"name": "FastAPI", "proficiency": "intermediate"},
+        {"name": "Prometheus", "proficiency": "intermediate"}
+      ],
+      "interests": ["MLOps", "AI Infrastructure", "Model Serving"],
+      "experience_years": 4.0,
+      "weekly_hours": 10,
+      "target_timeline_weeks": 14,
+      "work_style": "infrastructure"
+    },
+    "relevant_roles": ["mlops_engineer", "devops_engineer", "platform_engineer"]
+  },
+  {
+    "id": "p11_data_scientist",
+    "label": "Product Data Scientist",
+    "profile": {
+      "summary": "Running A/B tests, statistical causal inference, predictive modeling in scikit-learn, and executive dashboards in SQL and Python.",
+      "skills": [
+        {"name": "Python", "proficiency": "advanced"},
+        {"name": "SQL", "proficiency": "advanced"},
+        {"name": "A/B Testing", "proficiency": "advanced"},
+        {"name": "Pandas", "proficiency": "advanced"},
+        {"name": "XGBoost", "proficiency": "advanced"},
+        {"name": "Tableau", "proficiency": "intermediate"},
+        {"name": "Amplitude", "proficiency": "intermediate"}
+      ],
+      "interests": ["Data Science", "Experimentation", "Statistical Modeling"],
+      "experience_years": 3.0,
+      "weekly_hours": 10,
+      "target_timeline_weeks": 12,
+      "work_style": "research"
+    },
+    "relevant_roles": ["data_scientist", "data_analyst", "ml_engineer"]
+  },
+  {
+    "id": "p12_data_engineer",
+    "label": "Batch Data Pipeline Engineer",
+    "profile": {
+      "summary": "Building ETL pipelines with Python, SQL, Snowflake star schemas, Apache Airflow DAGs, PySpark jobs, and dbt models on AWS.",
+      "skills": [
+        {"name": "Python", "proficiency": "advanced"},
+        {"name": "SQL", "proficiency": "advanced"},
+        {"name": "Snowflake", "proficiency": "advanced"},
+        {"name": "Airflow", "proficiency": "advanced"},
+        {"name": "PySpark", "proficiency": "advanced"},
+        {"name": "dbt", "proficiency": "intermediate"},
+        {"name": "Docker", "proficiency": "intermediate"},
+        {"name": "AWS", "proficiency": "intermediate"}
+      ],
+      "interests": ["Data Engineering", "Data Warehousing", "Distributed Data"],
+      "experience_years": 3.5,
+      "weekly_hours": 10,
+      "target_timeline_weeks": 16,
+      "work_style": "infrastructure"
+    },
+    "relevant_roles": ["data_engineer", "streaming_data_engineer", "analytics_engineer"]
+  },
+  {
+    "id": "p13_analytics_engineer",
+    "label": "SQL & dbt Analytics Engineer",
+    "profile": {
+      "summary": "Transforming warehouse data into tested dbt marts, maintaining BI dashboards, and collaborating with product analysts using Git.",
+      "skills": [
+        {"name": "SQL", "proficiency": "advanced"},
+        {"name": "dbt Core", "proficiency": "advanced"},
+        {"name": "BigQuery", "proficiency": "advanced"},
+        {"name": "Looker", "proficiency": "intermediate"},
+        {"name": "Git", "proficiency": "intermediate"},
+        {"name": "Python", "proficiency": "intermediate"}
+      ],
+      "interests": ["Analytics Engineering", "Data Modeling", "BI"],
+      "experience_years": 1.5,
+      "weekly_hours": 10,
+      "target_timeline_weeks": 12,
+      "work_style": "product"
+    },
+    "relevant_roles": ["analytics_engineer", "data_analyst", "data_engineer"]
+  },
+  {
+    "id": "p14_data_analyst",
+    "label": "Entry-Level Business & Product Data Analyst",
+    "profile": {
+      "summary": "Creating Power BI dashboards, analyzing conversion funnels, cohort retention in SQL, and exploratory analysis in Pandas.",
+      "skills": [
+        {"name": "SQL", "proficiency": "advanced"},
+        {"name": "Power BI", "proficiency": "advanced"},
+        {"name": "Pandas", "proficiency": "intermediate"},
+        {"name": "Statistics", "proficiency": "intermediate"},
+        {"name": "Mixpanel", "proficiency": "intermediate"}
+      ],
+      "interests": ["Product Analytics", "Business Intelligence", "Data Storytelling"],
+      "experience_years": 1.0,
+      "weekly_hours": 10,
+      "target_timeline_weeks": 12,
+      "work_style": "product"
+    },
+    "relevant_roles": ["data_analyst", "analytics_engineer", "data_scientist"]
+  },
+  {
+    "id": "p15_devops_cloud",
+    "label": "Cloud & DevOps Engineer",
+    "profile": {
+      "summary": "Automating AWS environments with Terraform, Kubernetes clusters, Docker builds, Linux servers, and GitHub Actions CI/CD.",
+      "skills": [
+        {"name": "Linux", "proficiency": "advanced"},
+        {"name": "Docker", "proficiency": "advanced"},
+        {"name": "Kubernetes", "proficiency": "advanced"},
+        {"name": "AWS", "proficiency": "advanced"},
+        {"name": "Terraform", "proficiency": "advanced"},
+        {"name": "GitHub Actions", "proficiency": "advanced"},
+        {"name": "TCP/IP", "proficiency": "intermediate"}
+      ],
+      "interests": ["Cloud Infrastructure", "DevOps", "Automation"],
+      "experience_years": 3.0,
+      "weekly_hours": 10,
+      "target_timeline_weeks": 14,
+      "work_style": "infrastructure"
+    },
+    "relevant_roles": ["devops_engineer", "platform_engineer", "sre_engineer"]
+  },
+  {
+    "id": "p16_sre_reliability",
+    "label": "Senior Site Reliability Engineer",
+    "profile": {
+      "summary": "Owning SLOs, OpenTelemetry/Prometheus observability, Kubernetes incident response, Linux networking, and reliability tooling in Go.",
+      "skills": [
+        {"name": "Linux", "proficiency": "advanced"},
+        {"name": "Networking", "proficiency": "advanced"},
+        {"name": "Kubernetes", "proficiency": "advanced"},
+        {"name": "OpenTelemetry", "proficiency": "advanced"},
+        {"name": "System Design", "proficiency": "advanced"},
+        {"name": "AWS", "proficiency": "advanced"},
+        {"name": "Golang", "proficiency": "advanced"},
+        {"name": "Terraform", "proficiency": "intermediate"}
+      ],
+      "interests": ["Site Reliability", "Observability", "High Availability"],
+      "experience_years": 6.0,
+      "weekly_hours": 8,
+      "target_timeline_weeks": 12,
+      "work_style": "infrastructure"
+    },
+    "relevant_roles": ["sre_engineer", "platform_engineer", "devops_engineer"]
+  },
+  {
+    "id": "p17_distributed_systems",
+    "label": "Systems Programmer in Go, Rust & C++",
+    "profile": {
+      "summary": "Building low-latency storage engines, networking proxies, and fault-tolerant distributed services using Go, Rust, C++, and Linux.",
+      "skills": [
+        {"name": "Go", "proficiency": "advanced"},
+        {"name": "Rust", "proficiency": "advanced"},
+        {"name": "C++", "proficiency": "intermediate"},
+        {"name": "System Design", "proficiency": "advanced"},
+        {"name": "Data Structures", "proficiency": "advanced"},
+        {"name": "Networking", "proficiency": "advanced"},
+        {"name": "Linux", "proficiency": "advanced"},
+        {"name": "gRPC", "proficiency": "intermediate"}
+      ],
+      "interests": ["Distributed Systems", "Core Infrastructure", "Performance"],
+      "experience_years": 5.5,
+      "weekly_hours": 8,
+      "target_timeline_weeks": 16,
+      "work_style": "infrastructure"
+    },
+    "relevant_roles": ["distributed_systems_engineer", "sre_engineer", "backend_engineer"]
+  },
+  {
+    "id": "p18_java_enterprise",
+    "label": "Java & Spring Boot Microservices Developer",
+    "profile": {
+      "summary": "Developing fintech payment microservices in Java 21, Spring Boot, PostgreSQL, Kafka event streams, and Docker.",
+      "skills": [
+        {"name": "Java", "proficiency": "advanced"},
+        {"name": "Spring Boot", "proficiency": "advanced"},
+        {"name": "SQL", "proficiency": "advanced"},
+        {"name": "PostgreSQL", "proficiency": "advanced"},
+        {"name": "REST", "proficiency": "advanced"},
+        {"name": "Microservices", "proficiency": "intermediate"},
+        {"name": "Algorithms", "proficiency": "intermediate"},
+        {"name": "Docker", "proficiency": "intermediate"}
+      ],
+      "interests": ["Enterprise Backend", "Fintech Microservices", "Java"],
+      "experience_years": 4.0,
+      "weekly_hours": 8,
+      "target_timeline_weeks": 14,
+      "work_style": "infrastructure"
+    },
+    "relevant_roles": ["java_enterprise_engineer", "backend_engineer"]
+  },
+  {
+    "id": "p19_mobile_rn",
+    "label": "React Native Mobile Developer",
+    "profile": {
+      "summary": "Shipping cross-platform iOS and Android apps using React Native, Expo, TypeScript, TanStack Query, and automated QA.",
+      "skills": [
+        {"name": "React Native", "proficiency": "advanced"},
+        {"name": "TypeScript", "proficiency": "advanced"},
+        {"name": "React", "proficiency": "advanced"},
+        {"name": "Zustand", "proficiency": "intermediate"},
+        {"name": "REST", "proficiency": "intermediate"},
+        {"name": "Git", "proficiency": "intermediate"},
+        {"name": "Jest", "proficiency": "intermediate"}
+      ],
+      "interests": ["Mobile Apps", "Cross-Platform UI", "Consumer Apps"],
+      "experience_years": 2.5,
+      "weekly_hours": 10,
+      "target_timeline_weeks": 12,
+      "work_style": "product"
+    },
+    "relevant_roles": ["mobile_cross_platform", "frontend_engineer", "fullstack_engineer"]
+  },
+  {
+    "id": "p20_ios_native",
+    "label": "Native iOS SwiftUI Developer",
+    "profile": {
+      "summary": "Building native Apple apps with Swift, SwiftUI, async concurrency, REST integration, and XCTest automation.",
+      "skills": [
+        {"name": "SwiftUI", "proficiency": "advanced"},
+        {"name": "Algorithms", "proficiency": "intermediate"},
+        {"name": "REST APIs", "proficiency": "advanced"},
+        {"name": "Git", "proficiency": "advanced"},
+        {"name": "Unit Testing", "proficiency": "intermediate"}
+      ],
+      "interests": ["iOS Development", "Apple Ecosystem", "Mobile UX"],
+      "experience_years": 3.0,
+      "weekly_hours": 10,
+      "target_timeline_weeks": 12,
+      "work_style": "product"
+    },
+    "relevant_roles": ["ios_engineer", "mobile_cross_platform"]
+  },
+  {
+    "id": "p21_android_native",
+    "label": "Native Android Kotlin Developer",
+    "profile": {
+      "summary": "Developing Jetpack Compose Android apps with Kotlin Coroutines, REST APIs, Room DB, and automated tests.",
+      "skills": [
+        {"name": "Kotlin", "proficiency": "advanced"},
+        {"name": "Java", "proficiency": "intermediate"},
+        {"name": "Algorithms", "proficiency": "intermediate"},
+        {"name": "REST", "proficiency": "advanced"},
+        {"name": "Git", "proficiency": "advanced"},
+        {"name": "Unit Testing", "proficiency": "intermediate"}
+      ],
+      "interests": ["Android Development", "Mobile Engineering"],
+      "experience_years": 3.0,
+      "weekly_hours": 10,
+      "target_timeline_weeks": 12,
+      "work_style": "product"
+    },
+    "relevant_roles": ["android_engineer", "mobile_cross_platform"]
+  },
+  {
+    "id": "p22_appsec",
+    "label": "Application Security & Pentesting Engineer",
+    "profile": {
+      "summary": "Conducting OWASP Top 10 security reviews, Burp Suite web penetration testing, threat modeling, and CI security scanning.",
+      "skills": [
+        {"name": "OWASP", "proficiency": "advanced"},
+        {"name": "Burp Suite", "proficiency": "advanced"},
+        {"name": "Networking", "proficiency": "advanced"},
+        {"name": "REST APIs", "proficiency": "intermediate"},
+        {"name": "Python", "proficiency": "intermediate"},
+        {"name": "Linux", "proficiency": "advanced"},
+        {"name": "CI/CD", "proficiency": "intermediate"}
+      ],
+      "interests": ["Application Security", "Ethical Hacking", "Threat Modeling"],
+      "experience_years": 3.0,
+      "weekly_hours": 10,
+      "target_timeline_weeks": 14,
+      "work_style": "infrastructure"
+    },
+    "relevant_roles": ["appsec_engineer", "cloud_security_engineer"]
+  },
+  {
+    "id": "p23_devsecops",
+    "label": "Cloud Security / DevSecOps Specialist",
+    "profile": {
+      "summary": "Hardening AWS IAM policies, Kubernetes security standards, Terraform compliance guardrails, and zero-trust VPC architectures.",
+      "skills": [
+        {"name": "DevSecOps", "proficiency": "advanced"},
+        {"name": "AWS", "proficiency": "advanced"},
+        {"name": "Terraform", "proficiency": "advanced"},
+        {"name": "Kubernetes", "proficiency": "intermediate"},
+        {"name": "Networking", "proficiency": "advanced"},
+        {"name": "Linux", "proficiency": "advanced"},
+        {"name": "CI/CD", "proficiency": "advanced"}
+      ],
+      "interests": ["Cloud Security", "Zero Trust", "DevSecOps"],
+      "experience_years": 5.0,
+      "weekly_hours": 8,
+      "target_timeline_weeks": 14,
+      "work_style": "infrastructure"
+    },
+    "relevant_roles": ["cloud_security_engineer", "devops_engineer", "appsec_engineer"]
+  },
+  {
+    "id": "p24_qa_sdet",
+    "label": "SDET / Test Automation Engineer",
+    "profile": {
+      "summary": "Building Playwright browser tests, API contract test suites in TypeScript and Python, and GitHub Actions CI quality gates.",
+      "skills": [
+        {"name": "Playwright", "proficiency": "advanced"},
+        {"name": "TypeScript", "proficiency": "intermediate"},
+        {"name": "Python", "proficiency": "intermediate"},
+        {"name": "REST APIs", "proficiency": "intermediate"},
+        {"name": "GitHub Actions", "proficiency": "intermediate"},
+        {"name": "Git", "proficiency": "advanced"},
+        {"name": "SQL", "proficiency": "intermediate"}
+      ],
+      "interests": ["Quality Engineering", "Test Automation", "CI/CD"],
+      "experience_years": 1.5,
+      "weekly_hours": 10,
+      "target_timeline_weeks": 12,
+      "work_style": "product"
+    },
+    "relevant_roles": ["qa_automation_engineer", "fullstack_engineer"]
+  },
+  {
+    "id": "p25_ai_pm",
+    "label": "Technical PM shipping AI Copilot Features",
+    "profile": {
+      "summary": "Leading product discovery, PRDs, retention funnel analytics, LLM RAG feature scoping, and AI quality eval criteria.",
+      "skills": [
+        {"name": "Product Management", "proficiency": "advanced"},
+        {"name": "Product Analytics", "proficiency": "advanced"},
+        {"name": "LLM", "proficiency": "intermediate"},
+        {"name": "Evals", "proficiency": "intermediate"},
+        {"name": "SQL", "proficiency": "intermediate"},
+        {"name": "Statistics", "proficiency": "intermediate"}
+      ],
+      "interests": ["AI Product Strategy", "User Discovery", "LLM Products"],
+      "experience_years": 4.0,
+      "weekly_hours": 8,
+      "target_timeline_weeks": 12,
+      "work_style": "leadership"
+    },
+    "relevant_roles": ["ai_product_manager", "product_manager"]
+  }
+]

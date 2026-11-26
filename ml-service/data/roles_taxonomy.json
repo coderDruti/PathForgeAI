@@ -1,0 +1,970 @@
+[
+  {
+    "id": "fullstack_engineer",
+    "title": "Full-Stack Software Engineer",
+    "domain": "Software Engineering",
+    "level": "mid",
+    "work_style": "product",
+    "salary_band_usd": {"min": 105000, "max": 165000},
+    "demand_trend": "steady",
+    "description": "Designs and ships end-to-end web applications across modern React/TypeScript frontends, Node.js or Python REST APIs, databases, and cloud deployments.",
+    "core_skills": {
+      "typescript": 0.95,
+      "react": 0.95,
+      "nodejs": 0.9,
+      "express": 0.8,
+      "rest_apis": 0.9,
+      "postgresql": 0.8,
+      "mongodb": 0.75,
+      "git": 0.8,
+      "dsa": 0.75
+    },
+    "nice_to_have_skills": {
+      "nextjs": 0.45,
+      "docker": 0.45,
+      "redis": 0.4,
+      "testing_qa": 0.45,
+      "ci_cd": 0.35,
+      "tailwind": 0.35
+    },
+    "interview_topics": [
+      "REST API auth, caching, and pagination trade-offs",
+      "React rendering lifecycle, memoization, and state management",
+      "SQL vs NoSQL schema modeling and indexing",
+      "System design of a URL shortener or collaborative feed"
+    ]
+  },
+  {
+    "id": "frontend_engineer",
+    "title": "Frontend Engineer",
+    "domain": "Software Engineering",
+    "level": "entry",
+    "work_style": "product",
+    "salary_band_usd": {"min": 95000, "max": 155000},
+    "demand_trend": "steady",
+    "description": "Crafts fast, accessible, interactive user interfaces, design systems, and complex browser state architectures using React, TypeScript, and modern CSS.",
+    "core_skills": {
+      "javascript": 0.95,
+      "typescript": 0.95,
+      "react": 1.0,
+      "html_css": 0.9,
+      "tailwind": 0.75,
+      "state_management": 0.85,
+      "web_performance": 0.8,
+      "git": 0.75
+    },
+    "nice_to_have_skills": {
+      "nextjs": 0.5,
+      "testing_qa": 0.45,
+      "ui_ux_design": 0.4,
+      "graphql": 0.35,
+      "rest_apis": 0.4
+    },
+    "interview_topics": [
+      "Browser event loop, closures, and async concurrency",
+      "React reconciliation, hooks pitfalls, and bundle splitting",
+      "WCAG accessibility, Core Web Vitals, and responsive layout",
+      "Frontend system design: autocomplete, virtualized lists, real-time editor"
+    ]
+  },
+  {
+    "id": "backend_engineer",
+    "title": "Backend Software Engineer",
+    "domain": "Software Engineering",
+    "level": "mid",
+    "work_style": "infrastructure",
+    "salary_band_usd": {"min": 115000, "max": 180000},
+    "demand_trend": "steady",
+    "description": "Architects reliable, low-latency APIs, distributed services, database schemas, and caching layers powering high-throughput web and mobile platforms.",
+    "core_skills": {
+      "python": 0.85,
+      "nodejs": 0.85,
+      "rest_apis": 1.0,
+      "postgresql": 0.95,
+      "redis": 0.85,
+      "dsa": 0.9,
+      "system_design": 0.9,
+      "docker": 0.8,
+      "git": 0.75
+    },
+    "nice_to_have_skills": {
+      "fastapi": 0.45,
+      "express": 0.45,
+      "go": 0.4,
+      "microservices": 0.5,
+      "cloud_aws": 0.45,
+      "testing_qa": 0.45,
+      "observability": 0.35
+    },
+    "interview_topics": [
+      "Database transactions, isolation levels, and B-tree indexing",
+      "Caching invalidation patterns and distributed rate limiting",
+      "Idempotency, retries, and message queues in microservices",
+      "Data structures, graph traversal, and concurrency"
+    ]
+  },
+  {
+    "id": "genai_engineer",
+    "title": "Generative AI / LLM Engineer",
+    "domain": "AI & Machine Learning",
+    "level": "mid",
+    "work_style": "product",
+    "salary_band_usd": {"min": 135000, "max": 215000},
+    "demand_trend": "high_growth",
+    "description": "Builds production LLM applications, RAG pipelines, agentic workflows, structured output systems, and automated evaluation harnesses.",
+    "core_skills": {
+      "python": 1.0,
+      "llm_rag": 1.0,
+      "embeddings_nlp": 0.95,
+      "vector_databases": 0.9,
+      "ai_agents": 0.9,
+      "llm_evals": 0.85,
+      "fastapi": 0.85,
+      "docker": 0.75
+    },
+    "nice_to_have_skills": {
+      "typescript": 0.45,
+      "react": 0.35,
+      "fine_tuning": 0.45,
+      "pytorch_dl": 0.4,
+      "observability": 0.4,
+      "redis": 0.35,
+      "cloud_aws": 0.4
+    },
+    "interview_topics": [
+      "Hybrid retrieval (BM25 + dense vectors), chunking, and reranking trade-offs",
+      "Designing golden eval suites for RAG faithfulness and hallucination detection",
+      "Agentic tool-use loops, structured JSON decoding, and latency/cost budgets",
+      "Prompt injection mitigation and production LLM observability"
+    ]
+  },
+  {
+    "id": "ai_application_engineer",
+    "title": "Full-Stack AI Product Engineer",
+    "domain": "AI & Machine Learning",
+    "level": "mid",
+    "work_style": "product",
+    "salary_band_usd": {"min": 125000, "max": 195000},
+    "demand_trend": "high_growth",
+    "description": "Bridges product engineering and generative AI to deliver interactive AI copilots, streaming UX, hybrid search backends, and feedback-driven workflows.",
+    "core_skills": {
+      "typescript": 0.9,
+      "react": 0.9,
+      "nodejs": 0.85,
+      "python": 0.85,
+      "fastapi": 0.8,
+      "llm_rag": 0.95,
+      "vector_databases": 0.8,
+      "mongodb": 0.75,
+      "rest_apis": 0.85
+    },
+    "nice_to_have_skills": {
+      "ai_agents": 0.5,
+      "llm_evals": 0.45,
+      "nextjs": 0.45,
+      "docker": 0.45,
+      "embeddings_nlp": 0.45,
+      "redis": 0.35
+    },
+    "interview_topics": [
+      "Designing streaming AI interfaces with optimistic updates and fallback UX",
+      "Orchestrating Node.js gateways with Python ML/LLM inference microservices",
+      "Building user-feedback loops to improve recommendations and prompts",
+      "Caching, rate limiting, and cost control for LLM-backed APIs"
+    ]
+  },
+  {
+    "id": "ml_engineer",
+    "title": "Machine Learning Engineer",
+    "domain": "AI & Machine Learning",
+    "level": "mid",
+    "work_style": "research",
+    "salary_band_usd": {"min": 135000, "max": 210000},
+    "demand_trend": "high_growth",
+    "description": "Designs, trains, evaluates, and deploys supervised, deep learning, and ranking models at scale with rigorous offline/online experimentation.",
+    "core_skills": {
+      "python": 1.0,
+      "scikit_learn": 0.95,
+      "pytorch_dl": 0.95,
+      "pandas_numpy": 0.9,
+      "statistics_math": 0.9,
+      "mlops": 0.85,
+      "sql": 0.8,
+      "docker": 0.8,
+      "dsa": 0.8
+    },
+    "nice_to_have_skills": {
+      "embeddings_nlp": 0.45,
+      "recsys": 0.45,
+      "fastapi": 0.45,
+      "spark": 0.4,
+      "cloud_aws": 0.45,
+      "kubernetes": 0.35
+    },
+    "interview_topics": [
+      "Bias-variance trade-off, regularization, and feature leakage prevention",
+      "PyTorch training stability, loss functions, and inference optimization",
+      "End-to-end ML system design (ranking, fraud detection, recommendations)",
+      "Online A/B testing, model drift detection, and shadow deployments"
+    ]
+  },
+  {
+    "id": "recsys_engineer",
+    "title": "Recommendation & Search ML Engineer",
+    "domain": "AI & Machine Learning",
+    "level": "senior",
+    "work_style": "research",
+    "salary_band_usd": {"min": 145000, "max": 230000},
+    "demand_trend": "high_growth",
+    "description": "Builds multi-stage candidate generation, semantic retrieval, and personalized ranking systems driving feed discovery, search, and marketplace matching.",
+    "core_skills": {
+      "python": 1.0,
+      "recsys": 1.0,
+      "embeddings_nlp": 0.95,
+      "scikit_learn": 0.9,
+      "pytorch_dl": 0.85,
+      "vector_databases": 0.9,
+      "statistics_math": 0.85,
+      "sql": 0.8
+    },
+    "nice_to_have_skills": {
+      "spark": 0.45,
+      "mlops": 0.45,
+      "system_design": 0.45,
+      "fastapi": 0.4,
+      "redis": 0.4
+    },
+    "interview_topics": [
+      "Two-tower retrieval vs cross-encoder reranking latency trade-offs",
+      "Cold-start mitigation, exploration/exploitation, and popularity bias",
+      "Offline metrics (NDCG@K, MRR, Recall@K) vs online engagement metrics",
+      "ANN vector indexing (HNSW/IVF) and real-time feature stores"
+    ]
+  },
+  {
+    "id": "nlp_engineer",
+    "title": "NLP & Applied AI Engineer",
+    "domain": "AI & Machine Learning",
+    "level": "mid",
+    "work_style": "research",
+    "salary_band_usd": {"min": 130000, "max": 200000},
+    "demand_trend": "high_growth",
+    "description": "Develops document intelligence, information extraction, semantic search, and fine-tuned language models for unstructured text workflows.",
+    "core_skills": {
+      "python": 1.0,
+      "embeddings_nlp": 1.0,
+      "pytorch_dl": 0.9,
+      "llm_rag": 0.9,
+      "fine_tuning": 0.85,
+      "scikit_learn": 0.85,
+      "vector_databases": 0.8
+    },
+    "nice_to_have_skills": {
+      "llm_evals": 0.45,
+      "fastapi": 0.45,
+      "docker": 0.4,
+      "mlops": 0.4,
+      "statistics_math": 0.4
+    },
+    "interview_topics": [
+      "Transformer attention mechanics, tokenization, and context limits",
+      "LoRA/QLoRA parameter-efficient fine-tuning vs RAG trade-offs",
+      "Evaluating NER, classification, and retrieval pipelines",
+      "Serving quantized models with vLLM and batching"
+    ]
+  },
+  {
+    "id": "cv_engineer",
+    "title": "Computer Vision Engineer",
+    "domain": "AI & Machine Learning",
+    "level": "mid",
+    "work_style": "research",
+    "salary_band_usd": {"min": 130000, "max": 205000},
+    "demand_trend": "steady",
+    "description": "Builds object detection, segmentation, OCR, and multimodal visual perception pipelines for robotics, retail, medical imaging, and edge devices.",
+    "core_skills": {
+      "python": 1.0,
+      "computer_vision": 1.0,
+      "pytorch_dl": 0.95,
+      "statistics_math": 0.85,
+      "pandas_numpy": 0.85,
+      "docker": 0.75
+    },
+    "nice_to_have_skills": {
+      "cpp": 0.5,
+      "mlops": 0.45,
+      "fastapi": 0.35,
+      "cloud_aws": 0.4,
+      "dsa": 0.4
+    },
+    "interview_topics": [
+      "CNN vs Vision Transformer architectures and transfer learning",
+      "Data augmentation, class imbalance, and mAP/IoU metrics",
+      "Quantization, ONNX/TensorRT acceleration, and edge deployment",
+      "Multimodal VLM alignment and OCR post-processing"
+    ]
+  },
+  {
+    "id": "mlops_engineer",
+    "title": "MLOps & AI Infrastructure Engineer",
+    "domain": "AI & Machine Learning",
+    "level": "mid",
+    "work_style": "infrastructure",
+    "salary_band_usd": {"min": 130000, "max": 205000},
+    "demand_trend": "high_growth",
+    "description": "Builds reproducible ML training pipelines, model registries, GPU inference platforms, feature stores, and automated drift monitoring.",
+    "core_skills": {
+      "python": 0.95,
+      "mlops": 1.0,
+      "docker": 0.95,
+      "kubernetes": 0.9,
+      "cloud_aws": 0.9,
+      "ci_cd": 0.85,
+      "fastapi": 0.8,
+      "observability": 0.8
+    },
+    "nice_to_have_skills": {
+      "terraform": 0.5,
+      "airflow": 0.45,
+      "pytorch_dl": 0.4,
+      "llm_evals": 0.4,
+      "linux": 0.45,
+      "system_design": 0.4
+    },
+    "interview_topics": [
+      "CI/CD/CT (continuous training) and reproducible model lineage",
+      "Autoscaling GPU inference workloads on Kubernetes",
+      "Detecting data drift, concept drift, and silent model degradation",
+      "Feature store architecture for online/offline parity"
+    ]
+  },
+  {
+    "id": "data_scientist",
+    "title": "Data Scientist",
+    "domain": "Data & Analytics",
+    "level": "mid",
+    "work_style": "research",
+    "salary_band_usd": {"min": 115000, "max": 180000},
+    "demand_trend": "steady",
+    "description": "Applies statistical modeling, causal experimentation, and predictive machine learning to solve growth, pricing, and retention problems.",
+    "core_skills": {
+      "python": 0.95,
+      "sql": 0.95,
+      "statistics_math": 1.0,
+      "pandas_numpy": 0.95,
+      "scikit_learn": 0.95,
+      "data_visualization": 0.85,
+      "product_analytics": 0.8
+    },
+    "nice_to_have_skills": {
+      "pytorch_dl": 0.4,
+      "embeddings_nlp": 0.4,
+      "dbt": 0.35,
+      "spark": 0.4,
+      "recsys": 0.4
+    },
+    "interview_topics": [
+      "Designing A/B tests, sample size calculations, and peeking pitfalls",
+      "Interpretable modeling, feature importance, and metric trade-offs",
+      "Complex SQL cohort and retention queries",
+      "Translating open-ended business problems into measurable KPIs"
+    ]
+  },
+  {
+    "id": "data_engineer",
+    "title": "Data Engineer",
+    "domain": "Data & Analytics",
+    "level": "mid",
+    "work_style": "infrastructure",
+    "salary_band_usd": {"min": 120000, "max": 185000},
+    "demand_trend": "high_growth",
+    "description": "Designs scalable batch and streaming data pipelines, lakehouses, dimensional warehouses, and data quality frameworks.",
+    "core_skills": {
+      "python": 0.95,
+      "sql": 1.0,
+      "data_warehousing": 0.95,
+      "airflow": 0.9,
+      "spark": 0.9,
+      "dbt": 0.85,
+      "docker": 0.8,
+      "cloud_aws": 0.85
+    },
+    "nice_to_have_skills": {
+      "streaming_kafka": 0.5,
+      "postgresql": 0.45,
+      "terraform": 0.4,
+      "ci_cd": 0.4,
+      "linux": 0.4
+    },
+    "interview_topics": [
+      "Dimensional modeling (star schema, SCD Type 2) and warehouse partitioning",
+      "Idempotent, backfillable Airflow DAG design and SLA monitoring",
+      "Spark memory tuning, data skew, and Parquet file sizing",
+      "Batch vs streaming CDC architectures with Kafka"
+    ]
+  },
+  {
+    "id": "analytics_engineer",
+    "title": "Analytics Engineer",
+    "domain": "Data & Analytics",
+    "level": "entry",
+    "work_style": "product",
+    "salary_band_usd": {"min": 100000, "max": 155000},
+    "demand_trend": "high_growth",
+    "description": "Transforms raw operational data into clean, tested, documented analytics marts powering BI dashboards and self-serve metrics.",
+    "core_skills": {
+      "sql": 1.0,
+      "dbt": 1.0,
+      "data_warehousing": 0.95,
+      "data_visualization": 0.85,
+      "git": 0.85,
+      "python": 0.75
+    },
+    "nice_to_have_skills": {
+      "airflow": 0.45,
+      "product_analytics": 0.45,
+      "ci_cd": 0.4,
+      "postgresql": 0.4,
+      "statistics_math": 0.35
+    },
+    "interview_topics": [
+      "dbt modular layering (staging, intermediate, marts) and testing",
+      "Metric definitions, semantic layers, and preventing fan-out joins",
+      "SQL window functions and warehouse cost optimization",
+      "Partnering with product & finance stakeholders on KPIs"
+    ]
+  },
+  {
+    "id": "data_analyst",
+    "title": "Product & Business Data Analyst",
+    "domain": "Data & Analytics",
+    "level": "entry",
+    "work_style": "product",
+    "salary_band_usd": {"min": 80000, "max": 125000},
+    "demand_trend": "steady",
+    "description": "Uncovers user behavior trends, builds decision-ready executive dashboards, and analyzes funnels and experiments to drive product growth.",
+    "core_skills": {
+      "sql": 1.0,
+      "data_visualization": 0.95,
+      "pandas_numpy": 0.85,
+      "statistics_math": 0.85,
+      "product_analytics": 0.9,
+      "python": 0.75
+    },
+    "nice_to_have_skills": {
+      "dbt": 0.4,
+      "data_warehousing": 0.4,
+      "product_strategy": 0.45,
+      "scikit_learn": 0.3
+    },
+    "interview_topics": [
+      "Diagnosing sudden drops in conversion or retention metrics",
+      "Writing complex SQL aggregations and cohort analyses",
+      "Dashboard design clarity and stakeholder storytelling",
+      "Experimentation basics and statistical significance"
+    ]
+  },
+  {
+    "id": "devops_engineer",
+    "title": "DevOps / Cloud Engineer",
+    "domain": "Cloud & Infrastructure",
+    "level": "mid",
+    "work_style": "infrastructure",
+    "salary_band_usd": {"min": 115000, "max": 175000},
+    "demand_trend": "steady",
+    "description": "Automates cloud infrastructure, CI/CD release pipelines, container orchestration, and secure deployment workflows for engineering teams.",
+    "core_skills": {
+      "linux": 0.95,
+      "docker": 0.95,
+      "kubernetes": 0.9,
+      "cloud_aws": 0.95,
+      "terraform": 0.9,
+      "ci_cd": 0.95,
+      "networking": 0.85,
+      "git": 0.8
+    },
+    "nice_to_have_skills": {
+      "observability": 0.5,
+      "python": 0.45,
+      "go": 0.35,
+      "cloud_security": 0.45
+    },
+    "interview_topics": [
+      "Terraform state management, modules, and drift detection",
+      "Kubernetes pod scheduling, networking, and zero-downtime rollouts",
+      "Designing secure CI/CD pipelines with secret management",
+      "Linux troubleshooting (CPU, memory, disk I/O, DNS)"
+    ]
+  },
+  {
+    "id": "sre_engineer",
+    "title": "Site Reliability Engineer (SRE)",
+    "domain": "Cloud & Infrastructure",
+    "level": "senior",
+    "work_style": "infrastructure",
+    "salary_band_usd": {"min": 135000, "max": 210000},
+    "demand_trend": "steady",
+    "description": "Ensures high availability, resilience, latency SLOs, observability, and automated incident response across distributed production systems.",
+    "core_skills": {
+      "linux": 0.95,
+      "networking": 0.95,
+      "kubernetes": 0.95,
+      "observability": 1.0,
+      "system_design": 0.9,
+      "cloud_aws": 0.9,
+      "go": 0.8,
+      "python": 0.8,
+      "terraform": 0.8
+    },
+    "nice_to_have_skills": {
+      "docker": 0.45,
+      "ci_cd": 0.45,
+      "microservices": 0.45,
+      "redis": 0.35,
+      "cloud_security": 0.4
+    },
+    "interview_topics": [
+      "SLIs, SLOs, error budgets, and multi-window burn-rate alerting",
+      "Debugging cascading failures, thundering herds, and memory leaks",
+      "Distributed systems resilience: circuit breakers, bulkheads, backpressure",
+      "Blameless postmortems and toil automation"
+    ]
+  },
+  {
+    "id": "platform_engineer",
+    "title": "Platform Engineer",
+    "domain": "Cloud & Infrastructure",
+    "level": "senior",
+    "work_style": "infrastructure",
+    "salary_band_usd": {"min": 135000, "max": 205000},
+    "demand_trend": "high_growth",
+    "description": "Builds internal developer platforms, golden paths, self-service infrastructure templates, and CI/CD tooling that accelerate engineering velocity.",
+    "core_skills": {
+      "kubernetes": 0.95,
+      "terraform": 0.95,
+      "cloud_aws": 0.9,
+      "ci_cd": 0.95,
+      "go": 0.85,
+      "docker": 0.9,
+      "observability": 0.85,
+      "system_design": 0.8
+    },
+    "nice_to_have_skills": {
+      "typescript": 0.4,
+      "python": 0.45,
+      "cloud_security": 0.45,
+      "microservices": 0.4
+    },
+    "interview_topics": [
+      "Designing golden-path templates without creating brittle abstractions",
+      "Multi-tenant Kubernetes governance, RBAC, and GitOps (ArgoCD)",
+      "Developer experience metrics (DORA) and platform adoption",
+      "Infrastructure-as-code testing and safe rollouts"
+    ]
+  },
+  {
+    "id": "distributed_systems_engineer",
+    "title": "Distributed Systems / Core Infrastructure Engineer",
+    "domain": "Software Engineering",
+    "level": "senior",
+    "work_style": "infrastructure",
+    "salary_band_usd": {"min": 150000, "max": 240000},
+    "demand_trend": "steady",
+    "description": "Engineers fault-tolerant storage engines, consensus protocols, high-throughput messaging brokers, and low-latency core services.",
+    "core_skills": {
+      "go": 0.95,
+      "rust": 0.85,
+      "cpp": 0.85,
+      "system_design": 1.0,
+      "dsa": 0.95,
+      "networking": 0.9,
+      "linux": 0.9,
+      "microservices": 0.85
+    },
+    "nice_to_have_skills": {
+      "streaming_kafka": 0.5,
+      "kubernetes": 0.45,
+      "observability": 0.45,
+      "postgresql": 0.4,
+      "redis": 0.4
+    },
+    "interview_topics": [
+      "Consensus algorithms (Raft/Paxos), replication, and linearizability",
+      "Storage engines (LSM-trees vs B-trees) and write-ahead logs",
+      "Concurrency primitives, lock contention, and tail-latency reduction",
+      "Network partitions, consistent hashing, and distributed transactions"
+    ]
+  },
+  {
+    "id": "java_enterprise_engineer",
+    "title": "Enterprise Backend Engineer (Java / Spring)",
+    "domain": "Software Engineering",
+    "level": "mid",
+    "work_style": "infrastructure",
+    "salary_band_usd": {"min": 115000, "max": 175000},
+    "demand_trend": "steady",
+    "description": "Develops mission-critical financial, commerce, and enterprise microservices with Java, Spring Boot, relational databases, and event brokers.",
+    "core_skills": {
+      "java": 1.0,
+      "spring_boot": 1.0,
+      "sql": 0.9,
+      "postgresql": 0.85,
+      "rest_apis": 0.9,
+      "microservices": 0.85,
+      "dsa": 0.85,
+      "docker": 0.75
+    },
+    "nice_to_have_skills": {
+      "streaming_kafka": 0.5,
+      "redis": 0.45,
+      "kubernetes": 0.4,
+      "system_design": 0.5,
+      "testing_qa": 0.45
+    },
+    "interview_topics": [
+      "JVM memory model, garbage collection tuning, and concurrency",
+      "Spring Boot DI, transactional boundaries, and JPA N+1 issues",
+      "Event-driven sagas and outbox pattern with Kafka",
+      "Clean architecture and API backward compatibility"
+    ]
+  },
+  {
+    "id": "mobile_cross_platform",
+    "title": "Cross-Platform Mobile Engineer",
+    "domain": "Mobile Engineering",
+    "level": "mid",
+    "work_style": "product",
+    "salary_band_usd": {"min": 105000, "max": 165000},
+    "demand_trend": "steady",
+    "description": "Builds smooth iOS and Android apps from shared codebases using React Native or Flutter, offline storage, native bridges, and CI release tracks.",
+    "core_skills": {
+      "react_native": 0.95,
+      "typescript": 0.9,
+      "react": 0.9,
+      "state_management": 0.85,
+      "rest_apis": 0.8,
+      "git": 0.75,
+      "testing_qa": 0.75
+    },
+    "nice_to_have_skills": {
+      "flutter": 0.45,
+      "graphql": 0.35,
+      "ci_cd": 0.4,
+      "ui_ux_design": 0.4,
+      "swift_ios": 0.35,
+      "kotlin_android": 0.35
+    },
+    "interview_topics": [
+      "React Native new architecture (JSI/Fabric) and 60fps animation performance",
+      "Offline-first caching, background sync, and push notifications",
+      "Deep linking, app store release automation, and crash telemetry",
+      "Handling native module permissions and platform-specific UX"
+    ]
+  },
+  {
+    "id": "ios_engineer",
+    "title": "iOS Software Engineer",
+    "domain": "Mobile Engineering",
+    "level": "mid",
+    "work_style": "product",
+    "salary_band_usd": {"min": 115000, "max": 180000},
+    "demand_trend": "steady",
+    "description": "Crafts native Apple ecosystem experiences using Swift, SwiftUI, structured concurrency, CoreData, and tight performance profiling.",
+    "core_skills": {
+      "swift_ios": 1.0,
+      "dsa": 0.85,
+      "rest_apis": 0.85,
+      "git": 0.8,
+      "testing_qa": 0.8
+    },
+    "nice_to_have_skills": {
+      "ui_ux_design": 0.45,
+      "ci_cd": 0.4,
+      "system_design": 0.4,
+      "graphql": 0.35
+    },
+    "interview_topics": [
+      "ARC memory management, retain cycles, and Swift concurrency (async/await, actors)",
+      "SwiftUI state flow vs UIKit interoperability",
+      "Offline caching, networking resilience, and Instruments profiling",
+      "Mobile architecture patterns (MVVM, TCA)"
+    ]
+  },
+  {
+    "id": "android_engineer",
+    "title": "Android Software Engineer",
+    "domain": "Mobile Engineering",
+    "level": "mid",
+    "work_style": "product",
+    "salary_band_usd": {"min": 115000, "max": 180000},
+    "demand_trend": "steady",
+    "description": "Develops native Android applications with Kotlin, Jetpack Compose, Coroutines, offline persistence, and modular Gradle builds.",
+    "core_skills": {
+      "kotlin_android": 1.0,
+      "dsa": 0.85,
+      "rest_apis": 0.85,
+      "git": 0.8,
+      "testing_qa": 0.8
+    },
+    "nice_to_have_skills": {
+      "java": 0.45,
+      "ci_cd": 0.4,
+      "ui_ux_design": 0.4,
+      "system_design": 0.4
+    },
+    "interview_topics": [
+      "Kotlin Coroutines, Flow, and structured concurrency",
+      "Jetpack Compose recomposition optimization and lifecycle handling",
+      "Room database migrations, WorkManager, and battery efficiency",
+      "Modular Android architecture and dependency injection (Hilt)"
+    ]
+  },
+  {
+    "id": "appsec_engineer",
+    "title": "Application Security Engineer",
+    "domain": "Cybersecurity",
+    "level": "mid",
+    "work_style": "infrastructure",
+    "salary_band_usd": {"min": 125000, "max": 195000},
+    "demand_trend": "high_growth",
+    "description": "Secures web applications, APIs, and AI systems through threat modeling, secure code review, automated SAST/DAST gates, and vulnerability triage.",
+    "core_skills": {
+      "appsec_owasp": 1.0,
+      "networking": 0.9,
+      "rest_apis": 0.85,
+      "python": 0.8,
+      "pentesting": 0.85,
+      "linux": 0.8,
+      "ci_cd": 0.75
+    },
+    "nice_to_have_skills": {
+      "cloud_security": 0.5,
+      "javascript": 0.45,
+      "docker": 0.4,
+      "llm_evals": 0.35
+    },
+    "interview_topics": [
+      "Exploiting and defending against SSRF, IDOR, XSS, and SQLi",
+      "OAuth2/OIDC token flows, JWT pitfalls, and session security",
+      "Threat modeling new microservice or LLM features",
+      "Integrating SAST/DAST/SCA into CI pipelines with low false positives"
+    ]
+  },
+  {
+    "id": "cloud_security_engineer",
+    "title": "Cloud Security / DevSecOps Engineer",
+    "domain": "Cybersecurity",
+    "level": "senior",
+    "work_style": "infrastructure",
+    "salary_band_usd": {"min": 135000, "max": 210000},
+    "demand_trend": "high_growth",
+    "description": "Hardens cloud accounts, Kubernetes clusters, IAM guardrails, and CI/CD supply chains with policy-as-code and continuous detection.",
+    "core_skills": {
+      "cloud_security": 1.0,
+      "cloud_aws": 0.95,
+      "terraform": 0.9,
+      "kubernetes": 0.85,
+      "networking": 0.9,
+      "linux": 0.85,
+      "ci_cd": 0.85
+    },
+    "nice_to_have_skills": {
+      "appsec_owasp": 0.5,
+      "python": 0.45,
+      "observability": 0.45,
+      "docker": 0.45
+    },
+    "interview_topics": [
+      "Least-privilege IAM, cross-account roles, and zero-trust VPC design",
+      "Container image signing, SBOMs, and Kubernetes Pod Security Standards",
+      "Detecting and responding to cloud credential compromise",
+      "Policy-as-code enforcement with OPA / Terraform guardrails"
+    ]
+  },
+  {
+    "id": "qa_automation_engineer",
+    "title": "SDET / QA Automation Engineer",
+    "domain": "Software Engineering",
+    "level": "entry",
+    "work_style": "product",
+    "salary_band_usd": {"min": 90000, "max": 145000},
+    "demand_trend": "steady",
+    "description": "Engineers automated testing frameworks, API contract suites, browser E2E checks, and performance benchmarks integrated into CI/CD.",
+    "core_skills": {
+      "testing_qa": 1.0,
+      "typescript": 0.85,
+      "python": 0.85,
+      "rest_apis": 0.85,
+      "ci_cd": 0.85,
+      "git": 0.8,
+      "sql": 0.75
+    },
+    "nice_to_have_skills": {
+      "docker": 0.45,
+      "react": 0.35,
+      "observability": 0.35,
+      "appsec_owasp": 0.35
+    },
+    "interview_topics": [
+      "Balancing the test pyramid and eliminating flaky E2E tests",
+      "API contract testing, mocking external dependencies, and test data seeding",
+      "Load/stress testing API bottlenecks",
+      "Embedding quality gates in GitHub Actions pipelines"
+    ]
+  },
+  {
+    "id": "ai_product_manager",
+    "title": "AI / Technical Product Manager",
+    "domain": "Product & Design",
+    "level": "mid",
+    "work_style": "leadership",
+    "salary_band_usd": {"min": 130000, "max": 205000},
+    "demand_trend": "high_growth",
+    "description": "Defines AI-native product strategy, user workflows, evaluation criteria, and monetization in close partnership with ML and software engineers.",
+    "core_skills": {
+      "product_strategy": 1.0,
+      "product_analytics": 0.9,
+      "llm_rag": 0.85,
+      "llm_evals": 0.8,
+      "sql": 0.8,
+      "statistics_math": 0.75
+    },
+    "nice_to_have_skills": {
+      "ui_ux_design": 0.5,
+      "data_visualization": 0.45,
+      "ai_agents": 0.45,
+      "python": 0.35,
+      "rest_apis": 0.35
+    },
+    "interview_topics": [
+      "Deciding when to use deterministic heuristics vs RAG vs fine-tuning",
+      "Defining human-in-the-loop UX and acceptable AI error rates",
+      "Unit economics of LLM inference tokens and pricing models",
+      "Prioritizing roadmap bets using experiment data and user discovery"
+    ]
+  },
+  {
+    "id": "product_manager",
+    "title": "Technical Product Manager",
+    "domain": "Product & Design",
+    "level": "mid",
+    "work_style": "leadership",
+    "salary_band_usd": {"min": 120000, "max": 185000},
+    "demand_trend": "steady",
+    "description": "Owns product vision, discovery, prioritization, and cross-functional execution for developer platforms, APIs, and customer-facing SaaS.",
+    "core_skills": {
+      "product_strategy": 1.0,
+      "product_analytics": 0.95,
+      "sql": 0.8,
+      "ui_ux_design": 0.8,
+      "rest_apis": 0.75
+    },
+    "nice_to_have_skills": {
+      "data_visualization": 0.45,
+      "statistics_math": 0.45,
+      "system_design": 0.4,
+      "git": 0.3
+    },
+    "interview_topics": [
+      "Product sense: designing a 0-to-1 feature for a target persona",
+      "Diagnosing retention funnels and defining North Star metrics",
+      "Managing engineering trade-offs, tech debt, and launch sequencing",
+      "Writing crisp PRDs and aligning conflicting stakeholders"
+    ]
+  },
+  {
+    "id": "design_engineer",
+    "title": "Design Engineer (UI/UX + Frontend)",
+    "domain": "Product & Design",
+    "level": "mid",
+    "work_style": "product",
+    "salary_band_usd": {"min": 115000, "max": 180000},
+    "demand_trend": "emerging",
+    "description": "Sits at the intersection of design and frontend engineering, building interactive prototypes, polished micro-interactions, and production design systems.",
+    "core_skills": {
+      "ui_ux_design": 0.95,
+      "html_css": 0.95,
+      "tailwind": 0.9,
+      "react": 0.95,
+      "typescript": 0.85,
+      "web_performance": 0.85
+    },
+    "nice_to_have_skills": {
+      "nextjs": 0.45,
+      "state_management": 0.4,
+      "product_strategy": 0.4,
+      "git": 0.35
+    },
+    "interview_topics": [
+      "Translating Figma tokens into accessible, composable React primitives",
+      "Motion choreography and 60fps interaction polish",
+      "Design system API ergonomics and documentation",
+      "Rapid prototyping to validate product hypotheses"
+    ]
+  },
+  {
+    "id": "solutions_architect",
+    "title": "Cloud & AI Solutions Architect",
+    "domain": "Cloud & Infrastructure",
+    "level": "senior",
+    "work_style": "leadership",
+    "salary_band_usd": {"min": 140000, "max": 220000},
+    "demand_trend": "high_growth",
+    "description": "Designs end-to-end cloud, data, and generative AI reference architectures for enterprise customers, balancing security, cost, and latency.",
+    "core_skills": {
+      "cloud_aws": 0.95,
+      "system_design": 0.95,
+      "networking": 0.85,
+      "rest_apis": 0.85,
+      "cloud_security": 0.85,
+      "llm_rag": 0.8,
+      "docker": 0.8
+    },
+    "nice_to_have_skills": {
+      "kubernetes": 0.45,
+      "terraform": 0.45,
+      "python": 0.4,
+      "data_warehousing": 0.45,
+      "product_strategy": 0.45
+    },
+    "interview_topics": [
+      "Multi-region HA architecture, RPO/RTO targets, and cloud cost optimization",
+      "Enterprise RAG security: tenant isolation, PII redaction, and VPC endpoints",
+      "Legacy monolith-to-microservices migration blueprints",
+      "Communicating architectural trade-offs to executive stakeholders"
+    ]
+  },
+  {
+    "id": "streaming_data_engineer",
+    "title": "Real-Time Streaming Data Engineer",
+    "domain": "Data & Analytics",
+    "level": "senior",
+    "work_style": "infrastructure",
+    "salary_band_usd": {"min": 135000, "max": 205000},
+    "demand_trend": "high_growth",
+    "description": "Builds low-latency event streaming platforms, real-time feature pipelines, and CDC ingestion architectures using Kafka, Flink, and Spark.",
+    "core_skills": {
+      "streaming_kafka": 1.0,
+      "spark": 0.95,
+      "python": 0.9,
+      "sql": 0.9,
+      "data_warehousing": 0.85,
+      "docker": 0.85,
+      "cloud_aws": 0.85,
+      "system_design": 0.8
+    },
+    "nice_to_have_skills": {
+      "java": 0.5,
+      "go": 0.4,
+      "kubernetes": 0.45,
+      "airflow": 0.4,
+      "observability": 0.45
+    },
+    "interview_topics": [
+      "Exactly-once vs at-least-once semantics, watermarks, and late-arriving data",
+      "Kafka partitioning, consumer group rebalancing, and schema evolution",
+      "Real-time feature computation for online ML serving",
+      "Backpressure handling and stateful stream checkpointing"
+    ]
+  }
+]
