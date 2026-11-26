@@ -92,6 +92,7 @@ def run_benchmark() -> list[dict]:
         gemini_api_key=settings.gemini_api_key,
         gemini_embedding_model=settings.gemini_embedding_model,
         gemini_embedding_dims=settings.gemini_embedding_dims,
+        cache_dir=settings.data_dir,
     )
     roles = taxonomy.list_roles()
     role_texts = [taxonomy.role_document_text(r) for r in roles]
@@ -99,7 +100,12 @@ def run_benchmark() -> list[dict]:
     embeddings.fit_corpus(role_texts + skill_texts)
 
     matcher = SkillMatcher(taxonomy, embeddings)
-    hybrid = HybridCareerRecommender(taxonomy, embeddings, matcher)
+    hybrid = HybridCareerRecommender(
+        taxonomy,
+        embeddings,
+        matcher,
+        semantic_norm_mode=settings.semantic_norm_mode,
+    )
 
     # Baseline 1: Naive exact-name overlap + TF-IDF
     tfidf = PureNumpyTfidfSVD(max_features=3000, n_components=32).fit(role_texts)

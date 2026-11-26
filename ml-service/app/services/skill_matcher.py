@@ -44,7 +44,7 @@ class SkillMatcher:
                 if norm:
                     self.alias_to_id[norm] = skill.id
         if texts:
-            self.skill_matrix = self.embeddings.encode(texts)
+            self.skill_matrix = self.embeddings.encode_static("skills", texts)
 
     def resolve_one(self, raw_skill: UserSkillInput) -> tuple[SkillDefinition | None, float]:
         # 1. Direct canonical skill_id

@@ -1,5 +1,8 @@
+import hashlib
+import json
 import logging
 import math
+from pathlib import Path
 import re
 import time
 from collections import Counter
@@ -96,12 +99,14 @@ class EmbeddingService:
         gemini_api_key: str = "",
         gemini_embedding_model: str = "gemini-embedding-001",
         gemini_embedding_dims: int = 768,
+        cache_dir: Path | None = None,
         retry_delay_seconds: float = 0.8,
     ):
         self.requested_backend = backend.lower().strip()
         self.model_name = model_name
         self.gemini_embedding_model = gemini_embedding_model
         self.gemini_embedding_dims = gemini_embedding_dims
+        self.cache_dir = cache_dir
         self.retry_delay_seconds = retry_delay_seconds
 
         self.active_backend = "tfidf_svd"
@@ -226,6 +231,74 @@ class EmbeddingService:
 
         assert self._svd is not None
         return self._svd.transform_dense(texts)
+
+    def _compute_fingerprint(self, texts: list[str]) -> str:
+        payload = json.dumps(
+            {
+                "backend": self.active_backend,
+                "dims": self.gemini_embedding_dims,
+                "texts": texts,
+            },
+            sort_keys=True,
+        ).encode("utf-8")
+        return hashlib.sha256(payload).hexdigest()
+
+    def encode_static(self, namespace: str, texts: list[str]) -> np.ndarray:
+        """
+        Encode a static corpus (e.g., canonical skills or roles).
+        For the Gemini API backend, caches vectors in `<cache_dir>/gemini_cache_<namespace>.npz`
+        keyed by a SHA-256 content fingerprint so startups make 0 API calls when unchanged.
+        """
+        if not texts:
+            return np.zeros((0, 1), dtype=np.float32)
+
+        if self._gemini_client is None or self.cache_dir is None:
+            return self.encode(texts)
+
+        fingerprint = self._compute_fingerprint(texts)
+        cache_path = self.cache_dir / f"gemini_cache_{namespace}.npz"
+
+        if cache_path.exists():
+            try:
+                with np.load(cache_path, allow_pickle=False) as data:
+                    cached_fp = str(data["fingerprint"].item())
+                    vectors = data["vectors"].astype(np.float32)
+                if cached_fp == fingerprint and vectors.shape == (len(texts), self.gemini_embedding_dims):
+                    self._gemini_ready_dim = vectors.shape[1]
+                    logger.info(
+                        "Loaded %d cached Gemini embeddings for '%s' from %s (0 API calls)",
+                        len(texts),
+                        namespace,
+                        cache_path.name,
+                    )
+                    return vectors
+            except Exception as exc:
+                logger.warning("Ignoring unreadable embedding cache %s: %s", cache_path.name, exc)
+
+        vectors = self.encode(texts)
+        # Only persist if Gemini succeeded with valid non-zero vectors of expected dimension
+        if (
+            self._gemini_client is not None
+            and vectors.shape == (len(texts), self.gemini_embedding_dims)
+            and float(np.linalg.norm(vectors)) > 0.0
+        ):
+            try:
+                self.cache_dir.mkdir(parents=True, exist_ok=True)
+                np.savez_compressed(
+                    cache_path,
+                    fingerprint=np.array(fingerprint),
+                    vectors=vectors,
+                )
+                logger.info(
+                    "Saved %d Gemini embeddings for '%s' to %s",
+                    len(texts),
+                    namespace,
+                    cache_path.name,
+                )
+            except Exception as exc:
+                logger.warning("Could not write embedding cache %s: %s", cache_path.name, exc)
+
+        return vectors
 
     @staticmethod
     def cosine_similarity(vec_a: np.ndarray, matrix_b: np.ndarray) -> np.ndarray:

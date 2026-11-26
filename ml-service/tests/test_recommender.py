@@ -288,3 +288,83 @@ def test_gemini_embedding_backend_batches_normalizes_and_falls_back(monkeypatch)
     assert fallback_svc.active_backend == "tfidf_svd"
 
 
+def test_gemini_static_cache_avoids_repeat_api_calls_and_invalidates_on_change(monkeypatch, tmp_path):
+    from types import SimpleNamespace
+    import numpy as np
+    from google import genai as genai_mod
+
+    api_calls = {"count": 0}
+
+    class FakeGeminiCacheClient:
+        def __init__(self, api_key):
+            self.models = SimpleNamespace(embed_content=self._embed)
+
+        def _embed(self, model, contents, config):
+            api_calls["count"] += 1
+            dims = config.output_dimensionality
+            embs = [SimpleNamespace(values=[1.0, float(i + 1)] + [0.0] * (dims - 2)) for i in range(len(contents))]
+            return SimpleNamespace(embeddings=embs)
+
+    monkeypatch.setattr(genai_mod, "Client", FakeGeminiCacheClient)
+
+    texts = ["Python language", "React frontend"]
+    svc1 = EmbeddingService(
+        backend="gemini",
+        gemini_api_key="fake-key",
+        gemini_embedding_model="gemini-embedding-001",
+        gemini_embedding_dims=8,
+        cache_dir=tmp_path,
+        retry_delay_seconds=0.0,
+    )
+    vecs1 = svc1.encode_static("skills", texts)
+    assert api_calls["count"] == 1
+    assert (tmp_path / "gemini_cache_skills.npz").exists()
+
+    # Second startup loads from disk with 0 API calls
+    svc2 = EmbeddingService(
+        backend="gemini",
+        gemini_api_key="fake-key",
+        gemini_embedding_model="gemini-embedding-001",
+        gemini_embedding_dims=8,
+        cache_dir=tmp_path,
+        retry_delay_seconds=0.0,
+    )
+    vecs2 = svc2.encode_static("skills", texts)
+    assert api_calls["count"] == 1
+    assert np.allclose(vecs1, vecs2)
+
+    # Changing corpus invalidates fingerprint and refreshes cache
+    vecs3 = svc2.encode_static("skills", texts + ["FastAPI backend"])
+    assert api_calls["count"] == 2
+    assert vecs3.shape == (3, 8)
+
+
+def test_semantic_normalization_modes_handle_anisotropy_and_zero_vectors(services):
+    import numpy as np
+
+    taxonomy, matcher, recommender, *_ = services
+    # Simulate Gemini-like high-baseline cosines where linear scaling would saturate
+    high_cos = np.array([0.60, 0.72, 0.85], dtype=np.float32)
+
+    zscore_rec = HybridCareerRecommender(taxonomy, recommender.embeddings, matcher, semantic_norm_mode="zscore_sigmoid")
+    z_out = zscore_rec._normalize_semantic_scores(high_cos)
+    assert z_out[0] < z_out[1] < z_out[2]
+    assert z_out[2] < 1.0  # does not clip/saturate artificially
+
+    minmax_rec = HybridCareerRecommender(taxonomy, recommender.embeddings, matcher, semantic_norm_mode="minmax")
+    m_out = minmax_rec._normalize_semantic_scores(high_cos)
+    assert m_out[0] == pytest.approx(0.0)
+    assert m_out[2] == pytest.approx(1.0)
+
+    linear_rec = HybridCareerRecommender(taxonomy, recommender.embeddings, matcher, semantic_norm_mode="linear")
+    l_out = linear_rec._normalize_semantic_scores(high_cos)
+    assert l_out[1] == pytest.approx(1.0) and l_out[2] == pytest.approx(1.0)  # demonstrates saturation
+
+    # Zero-vector fallback must remain 0.0 across all modes
+    zeros = np.zeros(3, dtype=np.float32)
+    assert np.all(zscore_rec._normalize_semantic_scores(zeros) == 0.0)
+    assert np.all(minmax_rec._normalize_semantic_scores(zeros) == 0.0)
+
+
+
+

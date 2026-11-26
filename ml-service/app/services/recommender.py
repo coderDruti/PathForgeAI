@@ -41,20 +41,59 @@ class HybridCareerRecommender:
         taxonomy: TaxonomyStore,
         embeddings: EmbeddingService,
         matcher: SkillMatcher,
+        semantic_norm_mode: str = "zscore_sigmoid",
     ):
         self.taxonomy = taxonomy
         self.embeddings = embeddings
         self.matcher = matcher
+        self.semantic_norm_mode = semantic_norm_mode.lower().strip()
         self.role_list: list[RoleDefinition] = taxonomy.list_roles()
         self.role_matrix: np.ndarray = np.zeros((0, 1), dtype=np.float32)
         self._build_role_index()
+
+    def _normalize_semantic_scores(self, cos_scores: np.ndarray) -> np.ndarray:
+        """
+        Normalize raw cosine similarities across candidate roles into [0, 1].
+        Modes (controlled via SEMANTIC_NORM_MODE):
+        - "zscore_sigmoid" (default): confidence-capped z-score sigmoid (outlier-resistant, model-agnostic)
+        - "minmax": confidence-capped per-query min-max scaling
+        - "linear": legacy fixed linear scaling (raw - 0.08) / 0.62
+        """
+        if cos_scores.size == 0:
+            return np.zeros(0, dtype=np.float32)
+
+        max_c = float(np.max(cos_scores))
+        if max_c <= 0.0:
+            return np.zeros_like(cos_scores, dtype=np.float32)
+
+        mode = self.semantic_norm_mode
+        if mode == "linear":
+            return np.clip((cos_scores - 0.08) / 0.62, 0.0, 1.0).astype(np.float32)
+
+        confidence = min(1.0, max(0.0, max_c / 0.5))
+
+        if mode == "minmax":
+            min_c = float(np.min(cos_scores))
+            span = max_c - min_c
+            if span < 1e-6:
+                return np.full_like(cos_scores, 0.5 * confidence, dtype=np.float32)
+            return np.clip(((cos_scores - min_c) / span) * confidence, 0.0, 1.0).astype(np.float32)
+
+        # Default: "zscore_sigmoid"
+        mu = float(np.mean(cos_scores))
+        sigma = float(np.std(cos_scores))
+        if sigma < 1e-6:
+            return np.full_like(cos_scores, 0.5 * confidence, dtype=np.float32)
+        z = np.clip((cos_scores - mu) / sigma, -20.0, 20.0)
+        sigmoid = 1.0 / (1.0 + np.exp(-z))
+        return np.clip(sigmoid * confidence, 0.0, 1.0).astype(np.float32)
 
     def _build_role_index(self) -> None:
         role_texts = [self.taxonomy.role_document_text(r) for r in self.role_list]
         skill_texts = [self.taxonomy.skill_document_text(s) for s in self.taxonomy.skills.values()]
         # Fit fallback SVD on the combined corpus if needed
         self.embeddings.fit_corpus(role_texts + skill_texts)
-        self.role_matrix = self.embeddings.encode(role_texts)
+        self.role_matrix = self.embeddings.encode_static("roles", role_texts)
 
     def _profile_to_text(
         self, profile: UserProfileInput, resolved_map: dict[str, Proficiency]
@@ -184,8 +223,8 @@ class HybridCareerRecommender:
         nice_ratio = (nice_earned / nice_weight_total) if nice_weight_total > 0 else core_ratio
         skill_coverage = 0.78 * core_ratio + 0.22 * nice_ratio
 
-        # Calibrate cosine similarity to [0, 1]
-        semantic_score = min(1.0, max(0.0, (raw_cosine - 0.08) / 0.62))
+        # Normalized semantic score already scaled to [0, 1] by _normalize_semantic_scores
+        semantic_score = min(1.0, max(0.0, raw_cosine))
 
         # Experience alignment
         exp = profile.experience_years
@@ -314,9 +353,10 @@ class HybridCareerRecommender:
         profile_text = self._profile_to_text(profile, resolved_map)
         profile_vec = self.embeddings.encode([profile_text])[0]
         cos_scores = self.embeddings.cosine_similarity(profile_vec, self.role_matrix)
+        norm_scores = self._normalize_semantic_scores(cos_scores)
 
         recs = [
-            self._score_role(role, profile, resolved_map, float(cos_scores[idx]))
+            self._score_role(role, profile, resolved_map, float(norm_scores[idx]))
             for idx, role in enumerate(self.role_list)
         ]
         recs.sort(key=lambda r: (-r.match_score, r.estimated_weeks_to_ready, r.title))

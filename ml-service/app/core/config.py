@@ -20,6 +20,7 @@ class Settings(BaseSettings):
     embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
     gemini_embedding_model: str = "gemini-embedding-001"
     gemini_embedding_dims: int = 768
+    semantic_norm_mode: str = "zscore_sigmoid"
 
     llm_provider: str = "gemini"
     gemini_api_key: str = ""

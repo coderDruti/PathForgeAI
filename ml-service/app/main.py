@@ -51,6 +51,7 @@ def init_services() -> None:
         gemini_api_key=settings.gemini_api_key,
         gemini_embedding_model=settings.gemini_embedding_model,
         gemini_embedding_dims=settings.gemini_embedding_dims,
+        cache_dir=settings.data_dir,
     )
     # Pre-fit fallback corpus across both roles and skills before encoding
     corpus = [
@@ -64,7 +65,10 @@ def init_services() -> None:
     container.matcher = SkillMatcher(container.taxonomy, container.embeddings)
     container.resume_parser = ResumeParser(container.taxonomy)
     container.recommender = HybridCareerRecommender(
-        container.taxonomy, container.embeddings, container.matcher
+        container.taxonomy,
+        container.embeddings,
+        container.matcher,
+        semantic_norm_mode=settings.semantic_norm_mode,
     )
     llm_provider = LLMProvider(settings)
     container.roadmap_generator = GroundedRoadmapGenerator(
@@ -115,6 +119,7 @@ def health():
         "skills_count": len(container.taxonomy.skills),
         "roles_count": len(container.taxonomy.roles),
         "embedding_backend": container.embeddings.active_backend,
+        "semantic_norm_mode": settings.semantic_norm_mode,
         "llm_provider": settings.llm_provider,
     }
 
