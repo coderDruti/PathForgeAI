@@ -89,6 +89,9 @@ def run_benchmark() -> list[dict]:
     embeddings = EmbeddingService(
         backend=settings.embedding_backend,
         model_name=settings.embedding_model,
+        gemini_api_key=settings.gemini_api_key,
+        gemini_embedding_model=settings.gemini_embedding_model,
+        gemini_embedding_dims=settings.gemini_embedding_dims,
     )
     roles = taxonomy.list_roles()
     role_texts = [taxonomy.role_document_text(r) for r in roles]
